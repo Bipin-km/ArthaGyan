@@ -34,4 +34,4 @@ const styles = {
     },
 };
 
-export default Fooddter;
+export default Footer;
