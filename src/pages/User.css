@@ -1,0 +1,26 @@
+.user_profile input {
+  color: black;
+  background-color: aquamarine;
+}
+.user_profile button {
+  width: 50%;
+  background-color: burlywood;
+}
+.user_avatar {
+  width: 100px;
+  border-radius: 100%;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .user_avatar {
+    width: 80px; /* Adjust the width for smaller devices */
+    top: -100px; /* Adjust the top position for smaller devices */
+    left: 0; /* Center the image horizontally for smaller devices */
+    margin: 0 auto; /* Additional centering for smaller devices */
+  }
+}
+
+.user_details {
+  display: flex;
+  flex-direction: column;
+}

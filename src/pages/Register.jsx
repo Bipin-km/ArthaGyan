@@ -85,91 +85,91 @@ function Register() {
 
   return (
     <section className="login">
-    <div className="main-content">
-      <h1>Registration Form</h1>
-      <form
-        id="form"
-        className="main-form"
-        method="GET"
-        action="./"
-        onSubmit={submissionHandler}
-      >
-        <span>
-          <label className="input-label">Name:</label>
-          <input
-            type="text"
-            name="name"
-            className="input-box"
-            value={formData.name}
-            onChange={handleInputChange}
-          />
-        </span>
-        <span>
-          <label className="input-label">Email: </label>
-          <input
-            type="email"
-            name="email"
-            className="input-box"
-            value={formData.email}
-            onChange={handleInputChange}
-          />
-        </span>
-        <span>
-          <label className="input-label">Username: </label>
-          <input
-            type="text"
-            name="username"
-            className="input-box"
-            value={formData.username}
-            onChange={handleInputChange}
-          />
-        </span>
-        <span>
-          <label className="input-label">Password: </label>
-          <input
-            type="password"
-            name="password"
-            className="input-box"
-            value={formData.password}
-            onChange={handleInputChange}
-          />
-        </span>
-        <span>
-          <label className="input-label">Confirm Password: </label>
-          <input
-            type="password"
-            name="confirmPassword"
-            className="input-box"
-            value={formData.confirmPassword}
-            onChange={handleInputChange}
-          />
-        </span>
-        <span>
-          <label className="input-label">Date of Birth: </label>
-          <input
-            type="date"
-            name="dob"
-            className="input-box date"
-            value={formData.dob}
-            onChange={handleInputChange}
-          />
-        </span>
-        <span>
+      <div className="main-content">
+        <h1>Registration Form</h1>
+        <form
+          id="form"
+          className="main-form"
+          method="GET"
+          action="./"
+          onSubmit={submissionHandler}
+        >
           <span>
-            {" "}
+            <label className="input-label">Name:</label>
             <input
-              type="submit"
-              id="submitbtn"
-              name="submitbtn"
-              className="submit-btn"
-            ></input>
+              type="text"
+              name="name"
+              className="input-box"
+              value={formData.name}
+              onChange={handleInputChange}
+            />
           </span>
-        </span>
-      </form>
-      <Link to="/login" className="link">
-        Already have an account? Login here
-      </Link>
-    </div>
+          <span>
+            <label className="input-label">Email: </label>
+            <input
+              type="email"
+              name="email"
+              className="input-box"
+              value={formData.email}
+              onChange={handleInputChange}
+            />
+          </span>
+          <span>
+            <label className="input-label">Username: </label>
+            <input
+              type="text"
+              name="username"
+              className="input-box"
+              value={formData.username}
+              onChange={handleInputChange}
+            />
+          </span>
+          <span>
+            <label className="input-label">Password: </label>
+            <input
+              type="password"
+              name="password"
+              className="input-box"
+              value={formData.password}
+              onChange={handleInputChange}
+            />
+          </span>
+          <span>
+            <label className="input-label">Confirm Password: </label>
+            <input
+              type="password"
+              name="confirmPassword"
+              className="input-box"
+              value={formData.confirmPassword}
+              onChange={handleInputChange}
+            />
+          </span>
+          <span>
+            <label className="input-label">Date of Birth: </label>
+            <input
+              type="date"
+              name="dob"
+              className="input-box date"
+              value={formData.dob}
+              onChange={handleInputChange}
+            />
+          </span>
+          <div className="button_div">
+            <div>
+              {" "}
+              <input
+                type="submit"
+                id="submitbtn"
+                name="submitbtn"
+                className="submit-btn"
+              ></input>
+            </div>
+          </div>
+        </form>
+        <Link to="/login" className="link">
+          Already have an account? Login here
+        </Link>
+      </div>
     </section>
   );
 }

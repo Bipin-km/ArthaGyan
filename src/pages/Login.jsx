@@ -68,8 +68,8 @@ function Login() {
             onChange={handleInputChange}
           />
         </span>
-        <span>
-          <span>
+        <div className="button_div" >          
+          <div>
             {" "}
             <input
               type="submit"
@@ -78,8 +78,8 @@ function Login() {
               className="submit-btn"
               value={"Login"}
             ></input>
-          </span>
-        </span>
+          </div>
+        </div>
         </div>
 
       </form>
