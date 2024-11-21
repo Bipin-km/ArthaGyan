@@ -12,7 +12,10 @@ import QuizBoard from "./pages/QuizBoard";
 import CourseBoard from "./pages/CourseBoard";
 import Profile from "./pages/User";
 import ChequeForm from "./pages/Cheque";
-
+import BankingInfo from "./cources/banking";
+import BankingInNepal from "./cources/banks";
+import ChequeInfo from "./cources/cheques";
+import CentralBanksInfo from "./cources/centralbanks";
 const Main = () => {
     return (
         <Router>
@@ -39,6 +42,12 @@ const Main = () => {
                     <Route path="CourseBoard" element={<CourseBoard />} />
 
                     <Route path="Cheque" element={<ChequeForm />} />
+
+
+                    <Route path="Banking" element={<BankingInfo />} />
+                    <Route path="TypesOfBank" element={<BankingInNepal />} />
+                    <Route path="Cheques" element={<ChequeInfo />} />
+                    <Route path="CentralBanks" element={<CentralBanksInfo />} />
 
                     {/* Catch-all for 404 */}
                     <Route path="*" element={<NotFound />} />
