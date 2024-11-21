@@ -1,5 +1,5 @@
-./arthagyan_frontend/eslint.config.js
-./arthagyan_frontend/package.json
-./arthagyan_frontend/pacakge-lock.json
-./arthagyan_frontend/vite.config.js
+arthagyan_frontend/eslint.config.js
+arthagyan_frontend/package.json
+arthagyan_frontend/package-lock.json
+arthagyan_frontend/vite.config.js
 .gitattributes
