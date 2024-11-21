@@ -17,7 +17,7 @@ const Main = () => {
             <Routes>
                 <Route path="/" element={<AppLayout />}>
                     {/* Home Page */}
-                    <Route index element={<Home />} />
+                    <Route index element={<Dashboard />} />
 
                     {/* Quiz Page */}
                     {/* <Route path="quiz" element={<Quiz />} /> */}
