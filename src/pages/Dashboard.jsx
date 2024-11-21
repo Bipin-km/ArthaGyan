@@ -9,32 +9,33 @@ function Dashboard() {
       <section className="dashboard-section">
         <h2>Courses</h2>
         <div className="current-course">
-          <h3>Current Course Name</h3>
+          <h3 style={{justifySelf:"flex-start"}}>Current Course Name</h3>
           <div className="progress-bar">
             <div className="progress" style={{ width: "68%" }}></div>
           </div>
-          <p>Progress 68%</p>
+          <p style={{justifySelf:"flex-start"}}>Progress 68%</p>
         </div>
       </section>
 
       <section className="dashboard-section">
         <h2>Quizzes</h2>
         <div className="current-quiz">
-          <h3>Current Quiz Name</h3>
+          
+          <h3 style={{justifySelf:"flex-start"}}>Current Quiz Name</h3>
           <div className="progress-bar">
             <div className="progress" style={{ width: "68%" }}></div>
           </div>
-          <p>Progress 68%</p>
+          <p style={{justifySelf:"flex-start"}}>Progress 68%</p>
         </div>
       </section>
 
       <section className="dashboard-section">
   <h2>New Courses</h2>
   <div className="course-list">
-    <div className="course-card">Title 1<br />Short Description</div>
-    <div className="course-card">Title 2<br />Short Description</div>
-    <div className="course-card">Title 3<br />Short Description</div>
-    <div className="course-card">Title 4<br />Short Description</div>
+    <div className="course-card" style={{backgroundColor:"#8ecae6"}}>Title 1<br /> <br />Short Description</div>
+    <div className="course-card" style={{backgroundColor:"#219ebc"}}>Title 2<br /> <br />Short Description</div>
+    <div className="course-card" style={{backgroundColor:"#0077b6"}}>Title 3<br /> <br />Short Description</div>
+    <div className="course-card" style={{backgroundColor:"#5266b0"}} >Title 4<br /> <br />Short Description</div>
   </div>
   <button className="show-more">Show More</button>
 </section>
@@ -42,10 +43,10 @@ function Dashboard() {
 <section className="dashboard-section">
   <h2>New Quizzes</h2>
   <div className="quiz-list">
-    <div className="quiz-card">Title 1<br />Short Description</div>
-    <div className="quiz-card">Title 2<br />Short Description</div>
-    <div className="quiz-card">Title 3<br />Short Description</div>
-    <div className="quiz-card">Title 4<br />Short Description</div>
+    <div className="quiz-card" style={{backgroundColor:"#ccff33"}}>Title 1<br /> <br />Short Description</div>
+    <div className="quiz-card" style={{backgroundColor:"#9ef01a"}}>Title 2<br /> <br />Short Description</div>
+    <div className="quiz-card" style={{backgroundColor:"#70e000"}}>Title 3<br /> <br />Short Description</div>
+    <div className="quiz-card" style={{backgroundColor:"#38b000"}}>Title 4<br /> <br />Short Description</div>
   </div>
   <button className="show-more">Show More</button>
 </section>

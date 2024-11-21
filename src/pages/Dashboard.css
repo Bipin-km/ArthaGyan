@@ -10,6 +10,11 @@
     font-weight: bold;
     margin-bottom: 20px;
   }
+  .progress_display{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   
   .dashboard-section {
     margin: 20px 0;
@@ -62,6 +67,8 @@
     text-align: center;
     background-color: #f9f9f9;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: black;
+    font-weight: bolder;
   }
   
   .show-more {
