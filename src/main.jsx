@@ -8,6 +8,8 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
+import QuizBoard from "./pages/QuizBoard";
+import CourseBoard from "./pages/CourseBoard";
 
 const Main = () => {
     return (
@@ -27,6 +29,9 @@ const Main = () => {
 
                     {/* Login Page */}
                     <Route path="Login" element={<Login />} />
+
+                    <Route path="QuizBoard" element={<QuizBoard />} />
+                    <Route path="CourseBoard" element={<CourseBoard />} />
 
                     {/* Catch-all for 404 */}
                     <Route path="*" element={<NotFound />} />
