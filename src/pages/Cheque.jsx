@@ -1,56 +1,183 @@
-// ChequeForm.js
-import React, { useState } from 'react';
-import './ChequeForm.css';
+import React, { useState, useRef, useEffect } from "react";
+import "./ChequeForm.css";
 
-const ChequeForm = () => {
-  const [formData, setFormData] = useState({
-    payeeName: '',
-    amount: '',
-    date: '',
-    // Add more form fields as needed
+function Cheque() {
+  const [chequeData, setChequeData] = useState({
+    payee: "",
+    amount: "",
+    amountInWords: "",
+    date: new Date().toISOString().split("T")[0],
   });
 
-  const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const canvasRef = useRef(null);
+  const [previewVisible, setPreviewVisible] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isDrawing, setIsDrawing] = useState(false); // State to trigger canvas drawing
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setChequeData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Save the form data as a JSON file
-    saveAsJSON(formData);
+  const validateInput = () => {
+    if (!chequeData.payee || !chequeData.amount || !chequeData.amountInWords) {
+      setErrorMessage("Please fill out all fields.");
+      return false;
+    }
+    return true;
   };
 
-  const saveAsJSON = (data) => {
-    const jsonData = JSON.stringify(data, null, 2);
-    const blob = new Blob([jsonData], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'cheque_data.json';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleSubmit = () => {
+    if (!validateInput()) {
+      alert("Please fill out all fields.");
+      return;
+    }
+    setPreviewVisible(true); // Trigger rendering of the canvas
+    setErrorMessage("");
+    setIsDrawing(true); // Trigger the drawing logic
+  };
+
+  useEffect(() => {
+    if (!isDrawing) return;
+
+    const canvas = canvasRef.current;
+    if (!canvas) {
+      setErrorMessage("Canvas element not found.");
+      return;
+    }
+
+    const ctx = canvas.getContext("2d");
+    const image = new Image();
+    image.src = "/preview.jpg"; // Ensure the image path is correct
+
+    image.onload = () => {
+      canvas.width = image.width || 800;
+      canvas.height = image.height || 400;
+
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+      ctx.font = "20px Arial";
+      ctx.fillStyle = "black";
+
+      // Add cheque details
+      ctx.fillText(chequeData.payee || "Payee Name", 155, 100);
+      ctx.fillText(`₹ ${chequeData.amount || "0.00"}`, 600, 140);
+      ctx.fillText(chequeData.amountInWords || "Amount in words", 140, 145);
+      const dateStr = chequeData.date
+        ? new Date(chequeData.date)
+            .toLocaleDateString("en-GB")
+            .replace(/\//g, "")
+        : "";
+      const letterSpacing = 14; // 1.5px gap for each letter
+      let xPos = 540;
+
+      for (let i = 0; i < dateStr.length; i++) {
+        ctx.fillText(dateStr[i], xPos, 52);
+        xPos += ctx.measureText(dateStr[i]).width + letterSpacing;
+      }
+
+      setIsDrawing(false); // Reset drawing state
+    };
+
+    image.onerror = () => {
+      setErrorMessage(
+        "Failed to load cheque template image. Please check the file path."
+      );
+      setIsDrawing(false); // Reset drawing state
+    };
+  }, [isDrawing, chequeData]);
+
+  const handleDownload = () => {
+    const canvas = canvasRef.current;
+    if (canvas) {
+      const image = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.href = image;
+      link.download = "cheque.png";
+      link.click();
+    }
+  };
+
+  const handleClear = () => {
+    setChequeData({
+      payee: "",
+      amount: "",
+      amountInWords: "",
+      date: new Date().toISOString().split("T")[0],
+    });
+    const canvas = canvasRef.current;
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    setPreviewVisible(false);
+    setErrorMessage("");
   };
 
   return (
-    <div className="cheque-form-container">
-      <img src="preview.jpg" alt="Cheque Template" className="cheque-template" />
-      <form onSubmit={handleSubmit} className="cheque-form">
-        <input
-          type="text"
-          name="payeeName"
-          placeholder="Payee Name"
-          value={formData.payeeName}
-          onChange={handleInputChange}
-          className="cheque-field payee-name"
-        />
-        {/* Add more form fields */}
-        <button type="submit" className="submit-button">
+    <div className="cheque-container">
+      <h1 className="cheque-title">Cheque Filling Simulator</h1>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      <div className="form-container">
+        {/* Input Fields */}
+        <div className="form-group">
+          <label>Pay to</label>
+          <input
+            type="text"
+            name="payee"
+            value={chequeData.payee}
+            onChange={handleChange}
+            placeholder="Enter payee name"
+          />
+        </div>
+        <div className="form-group">
+          <label>Amount (₹)</label>
+          <input
+            type="text"
+            name="amount"
+            value={chequeData.amount}
+            onChange={handleChange}
+            placeholder="Enter amount"
+          />
+        </div>
+        <div className="form-group">
+          <label>Amount in words</label>
+          <input
+            type="text"
+            name="amountInWords"
+            value={chequeData.amountInWords}
+            onChange={handleChange}
+            placeholder="Enter amount in words"
+          />
+        </div>
+        <div className="form-group">
+          <label>Date</label>
+          <input
+            type="date"
+            name="date"
+            value={chequeData.date}
+            onChange={handleChange}
+          />
+        </div>
+        <button className="submit-btn" onClick={handleSubmit}>
           Submit
         </button>
-      </form>
+      </div>
+
+      {previewVisible && (
+        <div className="canvas-container">
+          <canvas ref={canvasRef} style={{ border: "1px solid #000" }}></canvas>
+          <div className="canvas-controls">
+            <button onClick={handleDownload}>Download</button>
+            <button onClick={handleClear}>Clear</button>
+          </div>
+        </div>
+      )}
     </div>
   );
-};
+}
 
-export default ChequeForm;
+export default Cheque;
