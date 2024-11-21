@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout";
 import Home from "./pages/Home";
 // import Quiz from "./pages/Quiz";
-// import Login from "./pages/Login";
+import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
 const Main = () => {
@@ -19,7 +19,7 @@ const Main = () => {
                     {/* <Route path="quiz" element={<Quiz />} /> */}
 
                     {/* Login Page */}
-                    {/* <Route path="login" element={<Login />} /> */}
+                    <Route path="login" element={<Login />} />
 
                     {/* Catch-all for 404 */}
                     <Route path="*" element={<NotFound />} />
