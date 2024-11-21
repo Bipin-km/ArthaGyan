@@ -16,6 +16,7 @@ import BankingInfo from "./cources/banking";
 import BankingInNepal from "./cources/banks";
 import ChequeInfo from "./cources/cheques";
 import CentralBanksInfo from "./cources/centralbanks";
+import SIPCalculator from "./pages/SIPCalculator";
 const Main = () => {
     return (
         <Router>
@@ -28,6 +29,8 @@ const Main = () => {
                     {/* <Route path="quiz" element={<Quiz />} /> */}
 
                     <Route path="Dashboard" element={<Dashboard />} />
+                    <Route path="sipcalculator" element={<SIPCalculator />} />
+
 
                     {/* Register Page */}
                     <Route path="Register" element={<Register />} />
