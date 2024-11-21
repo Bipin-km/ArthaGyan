@@ -8,10 +8,13 @@ function Register() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
+    address: "",
     username: "",
     password: "",
     confirmPassword: "",
     dob: "",
+    age:"",
   });
 
   const submissionHandler = (event) => {
@@ -30,6 +33,12 @@ function Register() {
 
     if (formData.password != formData.confirmPassword) {
       alert("Passwords do not match");
+      return;
+    }
+
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      alert("Phone number must be 10 digits long");
       return;
     }
 
@@ -61,16 +70,19 @@ function Register() {
       return;
     }
 
-    if (
-      Math.floor(
-        (new Date().getTime() - new Date(formData.dob).getTime()) /
-          (1000 * 60 * 60 * 24 * 365.25)
-      ) < 13
-    ) {
+    const age = Math.floor(
+      (new Date().getTime() - new Date(formData.dob).getTime()) / (1000 * 60 * 60 * 24 * 365.25)
+    );
+
+    if (age < 13) {
       alert("You must be 13 or older to submit this form");
       return;
     }
 
+    setFormData((prevState) => ({
+      ...prevState,
+      age: age, // store the calculated age
+    }));
     const form = document.getElementById("form");
     form.submit();
   };
@@ -111,6 +123,26 @@ function Register() {
               name="email"
               className="input-box"
               value={formData.email}
+              onChange={handleInputChange}
+            />
+          </span>
+          <span>
+            <label className="input-label">Phone: </label>
+            <input
+              type="phone"
+              name="phone"
+              className="input-box"
+              value={formData.phone}
+              onChange={handleInputChange}
+            />
+          </span>
+          <span>
+            <label className="input-label">Address: </label>
+            <input
+              type="text"
+              name="address"
+              className="input-box"
+              value={formData.address}
               onChange={handleInputChange}
             />
           </span>
