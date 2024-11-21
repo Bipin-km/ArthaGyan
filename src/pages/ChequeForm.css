@@ -1,0 +1,55 @@
+/* ChequeForm.css */
+.cheque-form-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .cheque-template {
+    width: 100%;
+    height: auto;
+  }
+  
+  .cheque-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cheque-field {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    color: #333;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .cheque-field:focus {
+    opacity: 1;
+  }
+  
+  .payee-name {
+    top: 20%;
+    left: 10%;
+  }
+  
+  /* Add more CSS rules for other form fields */
+  
+  .submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }

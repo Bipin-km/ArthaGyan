@@ -7,7 +7,7 @@ function Dashboard() {
 
 
       <section className="dashboard-section">
-        <h2>Courses</h2>
+        <h2 >Courses</h2>
         <div className="current-course">
           <h3 style={{justifySelf:"flex-start"}}>Current Course Name</h3>
           <div className="progress-bar">

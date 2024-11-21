@@ -10,6 +10,8 @@ import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
 import QuizBoard from "./pages/QuizBoard";
 import CourseBoard from "./pages/CourseBoard";
+import Profile from "./pages/User";
+import ChequeForm from "./pages/Cheque";
 
 const Main = () => {
     return (
@@ -29,9 +31,14 @@ const Main = () => {
 
                     {/* Login Page */}
                     <Route path="Login" element={<Login />} />
+                        
+                        {/* Profile Page */}
+                    <Route path="Profile" element={<Profile />} />
 
                     <Route path="QuizBoard" element={<QuizBoard />} />
                     <Route path="CourseBoard" element={<CourseBoard />} />
+
+                    <Route path="Cheque" element={<ChequeForm />} />
 
                     {/* Catch-all for 404 */}
                     <Route path="*" element={<NotFound />} />
