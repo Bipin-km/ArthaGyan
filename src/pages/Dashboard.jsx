@@ -4,9 +4,7 @@ import "./Dashboard.css";
 function Dashboard() {
   return (
     <div className="dashboard">
-      <header className="dashboard-header">
-        <h1>ArthaGyat</h1>
-      </header>
+
 
       <section className="dashboard-section">
         <h2>Courses</h2>
@@ -31,26 +29,27 @@ function Dashboard() {
       </section>
 
       <section className="dashboard-section">
-        <h2>New Courses</h2>
-        <div className="course-list">
-          <div className="course-card">Title 1<br />Short Description</div>
-          <div className="course-card">Title 1<br />Short Description</div>
-          <div className="course-card">Title 1<br />Short Description</div>
-          <div className="course-card">Title 1<br />Short Description</div>
-        </div>
-        <button className="show-more">Show More</button>
-      </section>
+  <h2>New Courses</h2>
+  <div className="course-list">
+    <div className="course-card">Title 1<br />Short Description</div>
+    <div className="course-card">Title 2<br />Short Description</div>
+    <div className="course-card">Title 3<br />Short Description</div>
+    <div className="course-card">Title 4<br />Short Description</div>
+  </div>
+  <button className="show-more">Show More</button>
+</section>
 
-      <section className="dashboard-section">
-        <h2>New Quizzes</h2>
-        <div className="quiz-list">
-          <div className="quiz-card">Title 1<br />Short Description</div>
-          <div className="quiz-card">Title 1<br />Short Description</div>
-          <div className="quiz-card">Title 1<br />Short Description</div>
-          <div className="quiz-card">Title 1<br />Short Description</div>
-        </div>
-        <button className="show-more">Show More</button>
-      </section>
+<section className="dashboard-section">
+  <h2>New Quizzes</h2>
+  <div className="quiz-list">
+    <div className="quiz-card">Title 1<br />Short Description</div>
+    <div className="quiz-card">Title 2<br />Short Description</div>
+    <div className="quiz-card">Title 3<br />Short Description</div>
+    <div className="quiz-card">Title 4<br />Short Description</div>
+  </div>
+  <button className="show-more">Show More</button>
+</section>
+
     </div>
   );
 }
