@@ -10,7 +10,7 @@ const AppLayout = () => {
             <main>
                 <Outlet /> {/* Render nested routes */}
             </main>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };
