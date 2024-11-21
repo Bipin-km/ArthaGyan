@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
+import Dashboard from "./pages/Dashboard";
 
 const Main = () => {
     return (
@@ -18,6 +19,8 @@ const Main = () => {
 
                     {/* Quiz Page */}
                     {/* <Route path="quiz" element={<Quiz />} /> */}
+
+                    <Route path="Dashboard" element={<Dashboard />} />
 
                     {/* Register Page */}
                     <Route path="Register" element={<Register />} />
