@@ -12,7 +12,6 @@ function ProgressBar() {
 
   return (
     <div className="progress-bar-container">
-      <h2>Enter Percentage (1 - 100):</h2>
       <input
         type="number"
         value={percentage}
