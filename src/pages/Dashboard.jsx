@@ -1,6 +1,7 @@
 import React from "react";
 import "./Dashboard.css";
 import ProgressBar from "./completionbar";
+import { Link } from "react-router-dom";
 function Dashboard() {
   return (
     <div className="dashboard">
@@ -26,68 +27,64 @@ function Dashboard() {
         <h2>New Courses</h2>
         <div className="course-list">
           <div className="course-card">
-            <div class="card">
-              <div class="card-header"></div>
+            
+              <div class="card-header"><img src="banker.png"/></div>
               <div class="card-body">
-                <h5 class="card-title">Tailwind card</h5>
+                <h5 class="card-title"><Link to="/Banking" style={styles.link}>Understanding Banking: A Fundamental Pillar of Modern Economies</Link></h5>
                 <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                  felis ligula.
+                A discussion abouts the fundamentals of banking
                 </p>
               </div>
               <div class="card-footer">
                 <button class="button">Read More</button>
               </div>
-            </div>
+   
           </div>
 
           <div className="course-card">
-            <div class="card">
-              <div class="card-header"></div>
+           
+              <div class="card-header"><img src="bank.png"/></div>
               <div class="card-body">
-                <h5 class="card-title">Tailwind card</h5>
+                <h5 class="card-title"><Link to="/TypesOfBank" style={styles.link}>Banking in Nepal</Link></h5>
                 <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                  felis ligula.
+                 A discussion abouts the varios types of banking in Nepal
                 </p>
               </div>
               <div class="card-footer">
                 <button class="button">Read More</button>
               </div>
-            </div>
+
           </div>
 
           <div className="course-card">
-            <div class="card">
-              <div class="card-header"></div>
+           
+              <div class="card-header"><img src="money.png"/></div>
               <div class="card-body">
-                <h5 class="card-title">Tailwind card</h5>
+                <h5 class="card-title"> <Link to="/centralbanks" style={styles.link}>Central Banks and Their Importance to the Economy</Link></h5>
                 <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                  felis ligula.
+                  Discussion og the central banks and their importance to the economy
                 </p>
               </div>
               <div class="card-footer">
                 <button class="button">Read More</button>
               </div>
-            </div>
+     
           </div>
 
           <div className="course-card">
-            <div class="card">
-              <div class="card-header"></div>
+           
+              <div class="card-header"><img src="cheque.png"/></div>
               <div class="card-body">
-                <h5 class="card-title">Tailwind card</h5>
+                <h5 class="card-title"><Link to="/cheques" style={styles.link}>Understanding Cheques and Their Types</Link></h5>
                 <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                  felis ligula.
+                  Discussion about the various types of cheques used by banks in nepal
                 </p>
               </div>
               <div class="card-footer">
                 <button class="button">Read More</button>
               </div>
             </div>
-          </div>
+
         </div>
         <button className="show-more">Show More</button>
       </section>
@@ -145,7 +142,7 @@ function Dashboard() {
           <div className="quiz-card">
             <div class="quizcard-container">
               <div class="quizcard">
-                <div class="quizcard-image"></div>
+                <div class="quizcard-image">Please Complete the course before viewing the quiz</div>
                 <div class="quizcard-content">
                   <div>
                     <h2 class="quizcard-title">Discover Nature</h2>
@@ -189,5 +186,12 @@ function Dashboard() {
     </div>
   );
 }
+const styles = {
+  link: {
+      color: "black",
+      textDecoration: "none",
+      fontSize: "1rem",
+  },
+};
 
 export default Dashboard;

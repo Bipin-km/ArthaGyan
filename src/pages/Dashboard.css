@@ -86,7 +86,9 @@
 
   .card {
     position: relative;
-    width: 20rem;
+    width: 100%;
+  max-width: 300px;
+  margin: 1rem;
     display: flex;
     flex-direction: column;
     border-radius: 0.75rem;
@@ -97,9 +99,15 @@
   
   .card-header {
     position: relative;
+    display: flex;
+  justify-content: center;
+  align-items: center;
     margin: 0 1rem;
-    margin-top: -1.5rem;
+    margin-top: -2rem;
     height: 10rem;
+    padding: 1rem;
+    /* Height of the header container */
+    height: 200px;
     overflow: hidden;
     border-radius: 0.75rem;
     background: linear-gradient(to right, #3b82f6, #2563eb);
@@ -107,6 +115,19 @@
     box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
   }
   
+  .card-header img {
+    /* Set specific dimensions for the image */
+    width: 180px;
+    height: 180px;
+    /* Maintain aspect ratio */
+    object-fit: contain;
+    /* Optional: smooth scaling */
+    transition: transform 0.3s ease;
+  }
+
+  .card-header img:hover {
+    transform: scale(1.05);
+  }
   .card-body {
     padding: 1.5rem;
   }
