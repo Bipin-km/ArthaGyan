@@ -25,57 +25,61 @@ import Interest from "./cources/intrest";
 import CreditScoreArticle from "./cources/creditscore";
 import QuizPlatform from "./quizes/Quiz_platform";
 const Main = () => {
-    return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<AppLayout />}>
-                    {/* Home Page */}
-                    <Route index element={<Dashboard />} />
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<AppLayout />}>
+          {/* Home Page */}
+          <Route index element={<Dashboard />} />
 
-                    {/* Quiz Page */}
-                    {/* <Route path="quiz" element={<Quiz />} /> */}
+          {/* Quiz Page */}
+          {/* <Route path="quiz" element={<Quiz />} /> */}
 
-                    <Route path="Dashboard" element={<Dashboard />} />
-                    <Route path="sipcalculator" element={<SIPCalculator />} />
+          <Route path="Dashboard" element={<Dashboard />} />
+          <Route path="sipcalculator" element={<SIPCalculator />} />
 
+          {/* Register Page */}
+          <Route path="Register" element={<Register />} />
 
-                    {/* Register Page */}
-                    <Route path="Register" element={<Register />} />
+          {/* Login Page */}
+          <Route path="Login" element={<Login />} />
 
-                    {/* Login Page */}
-                    <Route path="Login" element={<Login />} />
-                        
-                        {/* Profile Page */}
-                    <Route path="Profile" element={<Profile />} />
+          {/* Profile Page */}
+          <Route path="Profile" element={<Profile />} />
 
                     <Route path="QuizBoard" element={<QuizBoard />} />
                     <Route path="QuizBoard/quiz/:id" element={<QuizPlatform />} />
                     <Route path="CourseBoard" element={<CourseBoard />} />
 
-                    <Route path="Cheque" element={<ChequeForm />} />
+          <Route path="Cheque" element={<ChequeForm />} />
 
+          <Route path="CourseBoard/Banking" element={<BankingInfo />} />
+          <Route path="CourseBoard/TypesOfBank" element={<BankingInNepal />} />
+          <Route path="CourseBoard/Cheques" element={<ChequeInfo />} />
+          <Route
+            path="CourseBoard/CentralBanks"
+            element={<CentralBanksInfo />}
+          />
+          <Route path="CourseBoard/StockBasics" element={<StockBasics />} />
+          <Route path="CourseBoard/loans" element={<BankLoans />} />
+          <Route path="CourseBoard/Trading" element={<StockTradingBasics />} />
+          <Route path="CourseBoard/Candels" element={<CandlestickBasics />} />
+          <Route path="CourseBoard/Interest" element={<Interest />} />
+          <Route
+            path="CourseBoard/CreditScore"
+            element={<CreditScoreArticle />}
+          />
 
-                    <Route path="CourseBoard/Banking" element={<BankingInfo />} />
-                    <Route path="CourseBoard/TypesOfBank" element={<BankingInNepal />} />
-                    <Route path="CourseBoard/Cheques" element={<ChequeInfo />} />
-                    <Route path="CourseBoard/CentralBanks" element={<CentralBanksInfo />} />
-                    <Route path="CourseBoard/StockBasics" element={<StockBasics />} />
-                    <Route path="CourseBoard/loans" element={<BankLoans />} />
-                    <Route path="CourseBoard/Trading" element={<StockTradingBasics />} />
-                    <Route path="CourseBoard/Candels" element={<CandlestickBasics />} />
-                    <Route path="CourseBoard/Interest" element={<Interest />} />
-                    <Route path="CourseBoard/CreditScore" element={<CreditScoreArticle />} />
-
-                    {/* Catch-all for 404 */}
-                    <Route path="*" element={<NotFound />} />
-                </Route>
-            </Routes>
-        </Router>
-    );
+          {/* Catch-all for 404 */}
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
-        <Main />
-    </React.StrictMode>
+  <React.StrictMode>
+    <Main />
+  </React.StrictMode>
 );

@@ -14,35 +14,38 @@ const BankLoans = () => {
         providing financial assistance.
       </p>
 
-      <h2>Types of Bank Loans</h2>
-      <p>Here are the most common types of loans provided by banks:</p>
-      <ul>
-        <li>
-          <strong>Personal Loans:</strong> Unsecured loans used for personal
-          expenses such as medical bills, weddings, or vacations.
-        </li>
-        <li>
-          <strong>Home Loans (Mortgages):</strong> Loans to purchase or
-          renovate homes. They are secured against the property.
-        </li>
-        <li>
-          <strong>Auto Loans:</strong> Loans specifically for purchasing
-          vehicles, often secured by the car itself.
-        </li>
-        <li>
-          <strong>Business Loans:</strong> Loans designed to fund business
-          operations, expansions, or start-ups.
-        </li>
-        <li>
-          <strong>Education Loans:</strong> Loans to fund tuition and other
-          educational expenses.
-        </li>
-        <li>
-          <strong>Overdrafts:</strong> A type of short-term loan where the
-          bank allows you to withdraw more money than is available in your
-          account.
-        </li>
-      </ul>
+      <img src="/loan.jpg" alt="bisham_gey" style={{height:"50vh", display:"block", justifySelf:"center"}} />
+      <section>
+        <h2>Types of Bank Loans</h2>
+        <p>Here are the most common types of loans provided by banks:</p>
+        <ul>
+          <li>
+            <strong>Personal Loans:</strong> Unsecured loans used for personal
+            expenses such as medical bills, weddings, or vacations.
+          </li>
+          <li>
+            <strong>Home Loans (Mortgages):</strong> Loans to purchase or
+            renovate homes. They are secured against the property.
+          </li>
+          <li>
+            <strong>Auto Loans:</strong> Loans specifically for purchasing
+            vehicles, often secured by the car itself.
+          </li>
+          <li>
+            <strong>Business Loans:</strong> Loans designed to fund business
+            operations, expansions, or start-ups.
+          </li>
+          <li>
+            <strong>Education Loans:</strong> Loans to fund tuition and other
+            educational expenses.
+          </li>
+          <li>
+            <strong>Overdrafts:</strong> A type of short-term loan where the
+            bank allows you to withdraw more money than is available in your
+            account.
+          </li>
+        </ul>
+      </section>
 
       <h2>Terms Associated with Loans</h2>
       <p>

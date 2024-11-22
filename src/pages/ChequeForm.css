@@ -104,3 +104,12 @@
     font-size: 1.5rem;
   }
 }
+.canvas-container {
+  justify-self: center;
+}
+.canvas-controls{
+  justify-self: center;
+  display: flex;
+  gap:80%;
+  justify-items: flex-start;
+}

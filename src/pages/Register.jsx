@@ -1,7 +1,9 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import Login from "./Login";
 
+
+import { useState } from "react";
+import { Link,useNavigate } from "react-router-dom";
+import Login from "./Login";
+import axios from "axios";
 import "./Login.css";
 
 function Register() {
@@ -17,7 +19,8 @@ function Register() {
     age:"",
   });
 
-  const submissionHandler = (event) => {
+  const navigator = useNavigate()
+  const submissionHandler = async (event) => {
     event.preventDefault();
     console.log(formData.dob);
 
@@ -84,7 +87,24 @@ function Register() {
       age: age, // store the calculated age
     }));
     const form = document.getElementById("form");
-    form.submit();
+
+    try {
+      // Axios POST request
+      const baseUrl="http://192.168.137.1:5000";
+      const response = await axios.post(baseUrl+"/register", formData, {
+        headers: { "Content-Type": "application/json" },
+      });
+  
+      // Handle success response
+      navigator("/")
+      
+    } catch (err) {
+      // Handle error response
+      console.error("Login Error:", err.response?.data || err.message);
+      alert(
+        err.response?.data?.error || "An error occurred during login. Please try again."
+      );
+    }
   };
 
   const handleInputChange = (event) => {

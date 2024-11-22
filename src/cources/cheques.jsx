@@ -21,6 +21,11 @@ const ChequeInfo = () => {
         <li><strong>Signature:</strong> Authenticates the cheque.</li>
       </ul>
       <h2>Types of Cheques</h2>
+      <img
+        src="/cheque_a.jpg"
+        alt="bishem_gey"
+        style={{ height: "50vh", display: "block", justifySelf: "center" }}
+      />
       <ol>
         <li>
           <strong>Bearer Cheque:</strong> A cheque that can be encashed by the
@@ -32,8 +37,8 @@ const ChequeInfo = () => {
           </ul>
         </li>
         <li>
-          <strong>Order Cheque:</strong> A cheque issued to a specific person
-          or entity, requiring endorsement and identity verification before
+          <strong>Order Cheque:</strong> A cheque issued to a specific person or
+          entity, requiring endorsement and identity verification before
           encashment.
           <ul>
             <li>The word "Bearer" is crossed out.</li>
@@ -70,9 +75,29 @@ const ChequeInfo = () => {
             <li>
               Risks: Cannot be encashed immediately, so timing is crucial.
             </li>
+            <li>
+              Risks: Cannot be encashed immediately, so timing is crucial.
+            </li>
           </ul>
         </li>
       </ol>
+
+      <button
+        style={{
+          fontSize: "larger",
+          fontWeight: "bolder",
+          textDecoration: "none",
+          width: "50%",
+          color: "white",
+          backgroundColor: "blue",
+          padding: "5px",
+        }}
+      >
+        <Link to="/cheque" style={{ textDecoration: "none", color: "white" }}>
+          {" "}
+          Lets go for a check filling simulation
+        </Link>
+      </button>
     </div>
   );
 };
