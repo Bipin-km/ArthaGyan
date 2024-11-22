@@ -27,7 +27,9 @@ function SIPCalculator() {
     const months = years * 12;
     const monthlyRate = annualRate / 12 / 100;
     const maturity =
-      amount * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
+      amount *
+      ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) *
+      (1 + monthlyRate);
     setFutureValue(maturity.toFixed(2));
   };
 
@@ -38,12 +40,13 @@ function SIPCalculator() {
       </header>
 
       <section className="info-section">
-
-        <p>Remember Investing growth is nearly like exponential growth, so start investing early</p>
+        <p>
+          Remember Investing growth is nearly like exponential growth, so start
+          investing early
+        </p>
         <figure>
-          <img src="compound_interest.png" ></img>
+          <img src="compound_interest.png" style={{ width: "75%" }}></img>
         </figure>
-
       </section>
 
       <section className="input-section">
