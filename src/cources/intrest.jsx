@@ -1,5 +1,6 @@
 import React from "react";
 import "./intrest.css";
+import { Link } from "react-router-dom";
 
 const Interest = () => {
   return (
@@ -110,6 +111,22 @@ const Interest = () => {
           decisions.
         </p>
       </section>
+      <button
+        style={{
+          fontSize: "larger",
+          fontWeight: "bolder",
+          textDecoration: "none",
+          width: "50%",
+          color: "white",
+          backgroundColor: "blue",
+          padding: "5px",
+        }}
+      >
+        <Link to="/sipcalculator" style={{ textDecoration: "none", color: "white" }}>
+          {" "}
+          Lets move to SIP calculator
+        </Link>
+      </button>
     </div>
   );
 };

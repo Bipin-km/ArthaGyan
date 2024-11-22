@@ -41,7 +41,7 @@ function SIPCalculator() {
 
         <p>Remember Investing growth is nearly like exponential growth, so start investing early</p>
         <figure>
-          <img src="compound_interest.png"></img>
+          <img src="compound_interest.png" ></img>
         </figure>
 
       </section>
