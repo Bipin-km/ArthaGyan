@@ -6,18 +6,22 @@ const Profile = () => {
   const fakeUser = {
     username: "john_doe",
     email: "johndoe@example.com",
-    name: "John Doe",
+    name: " ",
     address: "123 Elm Street, Springfield",
-    phone_no: "1234567890",
+    phone_no: "",
     avatar: "/ag.png",
   };
 
   
   var userId = localStorage.getItem("id");
+
+  console.log("asdas")
+  console.log(localStorage.get)
   if (userId==null){
     userId =1;
   }
 
+  console.log(userId)
   // States to handle updates
   const [user, setUser] = useState(fakeUser);
   const [name, setName] = useState(user.name || "");

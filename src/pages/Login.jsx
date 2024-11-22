@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link , redirect,useNavigate} from "react-router-dom";
 import Register from "./Register";
 import axios from "axios";
 
@@ -10,6 +10,8 @@ function Login() {
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
+
 
   const submissionHandler = async (event) => {
     event.preventDefault(); // Prevent page reload on form submission
@@ -38,6 +40,11 @@ function Login() {
   
       // Handle success response
       console.log(response);
+      localStorage.setItem("id",response.data.user_id);
+
+      localStorage.setItem("name",response.data.name);
+      navigate("/profile")
+
       alert(`Welcome, ${response.data.name}!`);
     } catch (err) {
       // Handle error response
