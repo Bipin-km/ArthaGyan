@@ -49,7 +49,7 @@ const Main = () => {
                     <Route path="Profile" element={<Profile />} />
 
                     <Route path="QuizBoard" element={<QuizBoard />} />
-                    <Route path="QuizBoard/quiz:id" element={<QuizPlatform />} />
+                    <Route path="QuizBoard/quiz/:id" element={<QuizPlatform />} />
                     <Route path="CourseBoard" element={<CourseBoard />} />
 
                     <Route path="Cheque" element={<ChequeForm />} />

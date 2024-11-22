@@ -1,13 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./QuizBoard.css";
 import { quizData } from "../quizes/questions";
+import axios from "axios";
+
 
 function QuizBoard() {
+
+    const fetchAllQuizzes = async () => {
+        try {
+            const response = await axios.get('http://127.0.0.1:5000/getAllQuizzes');
+            if (response.status === 200) {
+                console.log("Quizzes fetched successfully:", response.data);
+                setQuizData(response.data)
+                return response.data; // Handle the JSON response here
+
+            } else {
+                console.error("Unexpected response status:", response.status);
+            }
+        } catch (error) {
+            console.error("Error fetching quizzes:", error.message);
+        }
+    };
+
+// Call the function
+useEffect(() => {
+  fetchAllQuizzes();
+}, []);
+
+
   const navigate = useNavigate();
+  const [quizData,setQuizData] = useState([]);
 
   const handleQuizSelect = (id) => {
-    navigate(`/QuizBoard/quiz${id}`);
+    navigate(`/QuizBoard/quiz/${id}`);
   };
 
   return (
@@ -18,10 +44,10 @@ function QuizBoard() {
           <div
             key={quiz.id}
             className="course-item"
-            onClick={() => handleQuizSelect(quiz.id)}
+            onClick={() => handleQuizSelect(quiz.quiz_id)}
           >
-            <h2 className="title">{quiz.topic}</h2>
-            <p>Quiz {quiz.id + 1}</p>
+            <h2 className="title">{quiz.quiz_name}</h2>
+            <p>Quiz {quiz.quiz_id + 1}</p>
           </div>
         ))}
       </div>

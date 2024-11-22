@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { quizData } from "./questions";
+import axios from "axios";
 import "./Quiz_platform.css";
 
 function QuizPlatform() {
@@ -12,14 +12,65 @@ function QuizPlatform() {
   const [score, setScore] = useState(0);
 
   useEffect(() => {
-    // Convert `id` from the route to an integer and find the corresponding quiz
     const quizId = parseInt(id.replace("quiz", ""), 10); // Ensure proper parsing
-    const quiz = quizData.find((q) => q.id === quizId);
-    if (quiz) {
-      setCurrentQuiz(quiz);
-      setUserAnswers(new Array(quiz.questions.length).fill(null)); // Initialize answers array
-    }
+    fetchQuizQuestions(quizId);
   }, [id]);
+
+  const fetchQuizQuestions = async (quizId) => {
+    try {
+      const response = await axios.get(`http://127.0.0.1:5000/getQuizQuestions/${quizId}`);
+      if (response.status === 200) {
+        console.log("Quiz questions fetched successfully:", response.data);
+
+        // Transform the data into the structure required by the component
+        const quiz = {
+          topic: `Quiz ${quizId + 1}`, // Assign a topic name dynamically
+          questions: response.data.map((item) => {
+            const options = [
+              item.options.option_a,
+              item.options.option_b,
+              item.options.option_c,
+              item.options.option_d,
+            ];
+            const correctAnswerIndex = 0; // Assuming option_a is always correct
+            const shuffledData = shuffleWithCorrectAnswer(options, correctAnswerIndex);
+            console.log("Shuffled Options:", shuffledData.shuffledOptions);
+            return {
+              question_id: item.question_id,
+              question: item.question,
+              options: shuffledData.shuffledOptions,
+              correctAnswerIndex: shuffledData.correctAnswerIndex, // Use the correct index here
+            };
+          }),
+        };
+
+        setCurrentQuiz(quiz);
+        setUserAnswers(new Array(quiz.questions.length).fill(null)); // Initialize answers array
+      }
+    } catch (error) {
+      console.error("Error fetching quiz questions:", error.message);
+    }
+  };
+
+  // Utility function to shuffle options and track the correct answer index
+  const shuffleWithCorrectAnswer = (options, correctAnswerIndex) => {
+    const indexedOptions = options.map((option, index) => ({
+      option,
+      originalIndex: index,
+    }));
+
+    for (let i = indexedOptions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indexedOptions[i], indexedOptions[j]] = [indexedOptions[j], indexedOptions[i]];
+    }
+
+    const shuffledOptions = indexedOptions.map((item) => item.option);
+    const newCorrectAnswerIndex = indexedOptions.findIndex(
+      (item) => item.originalIndex === correctAnswerIndex
+    );
+
+    return { shuffledOptions, correctAnswerIndex: newCorrectAnswerIndex };
+  };
 
   const handleAnswerSelect = (questionIndex, optionIndex) => {
     if (showResults) return;
@@ -33,7 +84,7 @@ function QuizPlatform() {
     if (!currentQuiz) return;
 
     const calculatedScore = userAnswers.reduce((acc, answer, index) => {
-      return acc + (answer === currentQuiz.questions[index].answer ? 1 : 0);
+      return acc + (answer === currentQuiz.questions[index].correctAnswerIndex ? 1 : 0);
     }, 0);
 
     setScore(calculatedScore);
@@ -71,7 +122,9 @@ function QuizPlatform() {
         </div>
       ) : (
         <div className="results-container">
-          <h2>Your Score: {score} / {currentQuiz.questions.length}</h2>
+          <h2>
+            Your Score: {score} / {currentQuiz.questions.length}
+          </h2>
           <button className="back-btn" onClick={() => navigate("/QuizBoard")}>
             Back to Quiz Board
           </button>
