@@ -2,7 +2,11 @@ import { useState } from 'react';
 import { Menu, X, BookOpen, Brain, Settings } from 'lucide-react';
 import "./header.css";
 import { Link } from "react-router-dom";
-const Header = ({ username = "John Doe" }) => {
+const Header = () => {
+var username = "New User"
+  if (localStorage.getItem("name")){
+  username = localStorage.getItem("name");}
+    
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
