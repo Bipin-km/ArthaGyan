@@ -8,6 +8,13 @@
     border-radius: 8px;
   }
   
+  .responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block; 
+    object-fit: cover; 
+  }
+
   .credit-score-article h1,
   .credit-score-article h2,
   .credit-score-article h3 {
