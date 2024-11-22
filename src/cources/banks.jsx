@@ -1,11 +1,11 @@
 import React from "react";
-
+import "./banking.css";
 const BankingInNepal = () => {
   return (
-    <div className="banking-info">
-      <h1>Banking in Nepal</h1>
-      <img src="/banks-in-nepal-2.jpg" alt="Banks in Nepal" className="responsive-image"loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
-      <p>
+    <div className="banking-info-container">
+      <h1 className="title">Banking in Nepal</h1>
+      <img src="/banks-in-nepal-2.jpg" alt="Banks in Nepal" className="responsive-image" loading="lazy" style={{height:"50vh", display:'block', justifySelf:"center" }}/>
+      <p className="intro">
         Nepal's banking sector is categorized into several types, each serving
         different financial needs and regulatory purposes. The classification is
         overseen by the Nepal Rastra Bank (NRB), the central regulatory authority.
@@ -20,9 +20,9 @@ const BankingInNepal = () => {
         including institutions like:
       </p>
       <ul>
-        <li>Nabil Bank</li>
-        <li>Standard Chartered Bank Nepal</li>
-        <li>Nepal Bank Limited</li>
+        <li><strong>Nabil Bank</strong></li>
+        <li><strong>Standard Chartered Bank Nepal</strong></li>
+        <li><strong>Nepal Bank Limited</strong></li>
       </ul>
       <p>
         These banks have extensive branch networks and cater to individual,
@@ -36,14 +36,14 @@ const BankingInNepal = () => {
         in regional development. There are 17 development banks, including:
       </p>
       <ul>
-        <li>Muktinath Bikas Bank</li>
-        <li>Garima Bikas Bank</li>
+        <li><strong>Muktinath Bikas Bank</strong></li>
+        <li><strong>Garima Bikas Bank</strong></li>
       </ul>
       <p>
         These banks operate regionally and nationally, providing specialized credit
         services.
       </p>
-      <img src="/banks-in-nepal-1.jpg" alt="Banks in Nepal" className="responsive-image"loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
+      <img src="/banks-in-nepal-1.jpg" alt="Banks in Nepal" className="responsive-image" loading="lazy" style={{height:"50vh", display:'block', justifySelf:"center" }}/>
       <h2>3. Finance Companies (Class C)</h2>
       <p>
         Finance companies are smaller financial institutions that offer services like
@@ -51,8 +51,8 @@ const BankingInNepal = () => {
         17 such companies in Nepal, including:
       </p>
       <ul>
-        <li>ICFC Finance</li>
-        <li>Pokhara Finance</li>
+        <li><strong>ICFC Finance</strong></li>
+        <li><strong>Pokhara Finance</strong></li>
       </ul>
       <p>These companies have limited operational scope compared to other banks.</p>
 
@@ -64,8 +64,8 @@ const BankingInNepal = () => {
         90 microfinance institutions, such as:
       </p>
       <ul>
-        <li>Nirdhan Utthan Laghubitta</li>
-        <li>Chhimek Laghubitta</li>
+        <li><strong>Nirdhan Utthan Laghubitta</strong></li>
+        <li><strong>Chhimek Laghubitta</strong></li>
       </ul>
 
       <h2>5. Cooperative Banks</h2>

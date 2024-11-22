@@ -1,19 +1,17 @@
 import React from "react";
-import "./tading.css";
 
 const StockTradingBasics = () => {
   return (
-    <div className="stock-trading-container">
-      <h1>Stock Trading: A Beginner's Guide</h1>
-      <img src="/trading.jpg" alt="bishem_gay" style={{height:"50vh", display:"block", justifySelf:"center"}} />
+    <div className="banking-info-container">
+      <h1 className="title">Stock Trading: A Beginner's Guide</h1>
       <section>
         <h2>What is Stock Trading?</h2>
-        <p>
+        <p className="intro">
           Stock trading involves buying and selling shares of publicly listed
           companies. The goal of trading is to capitalize on price movements,
           either short-term or long-term, depending on the trading strategy.
         </p>
-        <p>
+        <p className="intro">
           Unlike long-term investing, stock trading focuses on timing the
           market to achieve gains. This requires understanding the stock market,
           its patterns, and associated risks.
@@ -78,7 +76,7 @@ const StockTradingBasics = () => {
 
       <section>
         <h2>Importance of Risk Management</h2>
-        <p>
+        <p className="intro">
           Stock trading involves substantial risk. Managing your investments
           wisely by setting stop-loss orders, diversifying your portfolio, and
           avoiding emotional decisions can help minimize losses.
@@ -87,7 +85,7 @@ const StockTradingBasics = () => {
 
       <section>
         <h2>Conclusion</h2>
-        <p>
+        <p className="intro">
           Stock trading offers significant potential for profit but requires
           knowledge, discipline, and risk management. By understanding the
           fundamentals and key terms, beginners can start their trading journey

@@ -1,80 +1,115 @@
 import React from "react";
-import "./creditscore.css";
-
-const CreditScoreArticle = () => {
+import "./banking.css";
+const CentralBanksInfo = () => {
   return (
-    <div className="credit-score-article">
-      <h1>The Role of Credit Scores in Banking and Loans</h1>
-      <img src="/creditscore.png" alt="Creditscore" className="responsive-image" loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
-      <p>
-        A credit score is a numerical representation of a person’s
-        creditworthiness. Banks and financial institutions use it to evaluate
-        the likelihood of a borrower repaying a loan. Credit scores typically
-        range from 300 to 850, with higher scores indicating better credit
-        health.
+    <div className="banking-info-container">
+      <h1 className="title">Central Banks and Their Importance to the Economy</h1>
+      <img src="/candelstick-anatomy.jpg" alt="Anatomy of a candelstick" className="responsive-image" loading="lazy" style={{height:"50vh", display:'block', justifySelf:"center" }}/>
+      <p className="intro">
+        Central banks are the cornerstone of any nation's financial system,
+        responsible for maintaining economic stability and fostering growth. As
+        the apex monetary authority, central banks manage the supply of money,
+        oversee the functioning of commercial banks, and implement monetary
+        policy to ensure sustainable economic development.
       </p>
 
-      <h2>Factors Influencing Credit Scores</h2>
-      <ul>
-        <li><strong>Payment History:</strong> Timely repayment of debts is a major factor.</li>
-        <li><strong>Credit Utilization:</strong> The ratio of used credit to available credit.</li>
-        <li><strong>Length of Credit History:</strong> Older accounts demonstrate reliability.</li>
-        <li><strong>Types of Credit:</strong> A mix of credit cards, loans, and other debts.</li>
-        <li><strong>Recent Credit Inquiries:</strong> Frequent credit applications can lower the score.</li>
-      </ul>
-
-      <h2>Why Credit Scores Matter</h2>
+      <h2>Functions of a Central Bank</h2>
       <ul>
         <li>
-          <strong>Loan Approvals:</strong> A higher score increases chances of loan approval.
+          <strong>Monetary Policy Implementation:</strong> Central banks regulate
+          money supply and interest rates to control inflation, stabilize
+          currency, and foster economic growth. Tools such as open market
+          operations, reserve requirements, and interest rate adjustments are
+          commonly used.
         </li>
         <li>
-          <strong>Interest Rates:</strong> Excellent scores lead to lower interest rates.
+          <strong>Issuance of Currency:</strong> A central bank is responsible
+          for issuing the national currency, which serves as legal tender. This
+          ensures a stable and uniform monetary system.
         </li>
         <li>
-          <strong>Credit Card Eligibility:</strong> Better scores unlock premium cards with better rewards.
+          <strong>Lender of Last Resort:</strong> In times of financial crises,
+          central banks provide emergency funding to commercial banks and
+          financial institutions to prevent systemic collapse.
         </li>
         <li>
-          <strong>Loan Amounts and Terms:</strong> Good scores qualify borrowers for higher amounts and better terms.
-        </li>
-      </ul>
-      <img src="/creditscore-vantagescore.jpg" alt="creditscore-vantagescore" className="responsive-image" loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
-      <h2>How to Build and Maintain a Good Credit Score</h2>
-      <ul>
-        <li>
-          <strong>Timely Payments:</strong> Always pay bills and EMIs on time.
+          <strong>Foreign Exchange Management:</strong> Central banks manage
+          foreign exchange reserves and intervene in currency markets to
+          stabilize the national currency and maintain balance in international
+          trade.
         </li>
         <li>
-          <strong>Keep Credit Utilization Low:</strong> Use only a small portion of your credit limit.
+          <strong>Regulation of Financial Institutions:</strong> Central banks
+          supervise commercial banks and other financial institutions to ensure
+          they operate safely and soundly, protecting depositors' interests.
         </li>
         <li>
-          <strong>Avoid Frequent Applications:</strong> Limit credit inquiries.
-        </li>
-        <li>
-          <strong>Monitor Credit Reports:</strong> Check for errors or discrepancies regularly.
-        </li>
-        <li>
-          <strong>Diversify Credit Mix:</strong> Maintain a variety of credit accounts.
+          <strong>Government Banker:</strong> Central banks act as the banker
+          to the government, managing public debt, issuing government
+          securities, and sometimes funding budget deficits.
         </li>
       </ul>
 
-      <h2>The Role of Credit Scores in Modern Banking</h2>
+      <h2>Importance of Central Banks to the Economy</h2>
+      <ul>
+        <li>
+          <strong>Inflation Control:</strong> By managing inflation, central
+          banks protect the purchasing power of the currency and ensure economic
+          stability. High inflation erodes savings, while deflation discourages
+          investment and spending.
+        </li>
+        <li>
+          <strong>Economic Stability:</strong> Central banks smoothen economic
+          cycles by intervening during recessions and booms. For instance, during
+          economic slowdowns, they may lower interest rates to stimulate
+          spending and investment.
+        </li>
+        <li>
+          <strong>Financial System Stability:</strong> By regulating and
+          monitoring financial institutions, central banks ensure a resilient
+          financial sector, minimizing risks of bank failures and financial
+          crises.
+        </li>
+        <li>
+          <strong>Encouraging Investment and Growth:</strong> A stable monetary
+          environment fosters investor confidence, leading to more investments,
+          job creation, and economic growth.
+        </li>
+        <li>
+          <strong>Global Economic Role:</strong> Central banks also play a
+          crucial role in the global economy, particularly in managing exchange
+          rates and ensuring smooth international trade.
+        </li>
+      </ul>
+
+      <h2>Examples of Central Banks</h2>
+      <ul>
+        <li>
+          <strong>Federal Reserve (USA):</strong> Regulates the U.S. economy
+          through monetary policy and acts as a global economic influencer.
+        </li>
+        <li>
+          <strong>European Central Bank (ECB):</strong> Manages the euro and
+          monetary policy for the Eurozone.
+        </li>
+        <li>
+          <strong>Nepal Rastra Bank:</strong> Regulates Nepal's monetary system
+          and supports sustainable economic development.
+        </li>
+      </ul>
+
+      <h2>Conclusion</h2>
       <p>
-        Credit scores play a vital role in the digital age, especially with the
-        rise of fintech platforms offering instant loans based on real-time
-        credit assessments. They also impact other financial aspects, such as
-        insurance premiums and international credit systems like FICO in the
-        U.S.
-      </p>
-
-      <h3>Conclusion</h3>
-      <p>
-        Maintaining a strong credit score is essential for securing loans,
-        enjoying lower interest rates, and accessing better financial products.
-        It’s a cornerstone of modern financial health and responsibility.
+        Central banks are vital for economic governance, ensuring financial
+        stability and fostering long-term growth. Their policies impact
+        everything from inflation and employment to the stability of the
+        financial sector, making them indispensable to the modern economy. As
+        the global economy evolves, the role of central banks will continue to
+        be pivotal in addressing emerging challenges and ensuring economic
+        prosperity.
       </p>
     </div>
   );
 };
 
-export default CreditScoreArticle;
+export default CentralBanksInfo;
