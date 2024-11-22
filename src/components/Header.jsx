@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, BookOpen, Brain, Settings } from 'lucide-react';
+import { Menu, X, BookOpen, Brain, Settings, UserRound } from 'lucide-react';
 import "./header.css";
 import { Link } from "react-router-dom";
 const Header = () => {
@@ -67,6 +67,10 @@ var username = "New User"
             <li>
             <Settings size={20} />
               <Link to='/'  style={{ textDecoration: 'none' }}>Account Settings</Link>
+            </li>
+            <li>
+              <UserRound size={20} />
+              <Link to='/login'  style={{ textDecoration: 'none' }}>Login</Link>
             </li>
           </ul>
         </nav>
