@@ -65,10 +65,8 @@ var username = "New User"
              
             </li>
             <li>
-              <a href="#settings"  style={{ textDecoration: 'none' }}>
-                <Settings size={20} />
-                <span>Account Settings</span>
-              </a>
+            <Settings size={20} />
+              <Link to='/'  style={{ textDecoration: 'none' }}>Account Settings</Link>
             </li>
           </ul>
         </nav>
