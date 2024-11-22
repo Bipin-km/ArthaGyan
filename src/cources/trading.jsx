@@ -1,5 +1,5 @@
 import React from "react";
-import "./trading.css";
+import "./tading.css";
 
 const StockTradingBasics = () => {
   return (

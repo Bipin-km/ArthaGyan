@@ -17,6 +17,12 @@ import BankingInNepal from "./cources/banks";
 import ChequeInfo from "./cources/cheques";
 import CentralBanksInfo from "./cources/centralbanks";
 import SIPCalculator from "./pages/SIPCalculator";
+import StockBasics from "./cources/stocksbasicinfo";
+import BankLoans from "./cources/loans";
+import StockTradingBasics from "./cources/trading";
+import CandlestickBasics from "./cources/candels";
+import Interest from "./cources/intrest";
+import CreditScoreArticle from "./cources/creditscore";
 const Main = () => {
     return (
         <Router>
@@ -47,10 +53,16 @@ const Main = () => {
                     <Route path="Cheque" element={<ChequeForm />} />
 
 
-                    <Route path="Banking" element={<BankingInfo />} />
-                    <Route path="TypesOfBank" element={<BankingInNepal />} />
-                    <Route path="Cheques" element={<ChequeInfo />} />
-                    <Route path="CentralBanks" element={<CentralBanksInfo />} />
+                    <Route path="CourseBoard/Banking" element={<BankingInfo />} />
+                    <Route path="CourseBoard/TypesOfBank" element={<BankingInNepal />} />
+                    <Route path="CourseBoard/Cheques" element={<ChequeInfo />} />
+                    <Route path="CourseBoard/CentralBanks" element={<CentralBanksInfo />} />
+                    <Route path="CourseBoard/StockBasics" element={<StockBasics />} />
+                    <Route path="CourseBoard/loans" element={<BankLoans />} />
+                    <Route path="CourseBoard/Trading" element={<StockTradingBasics />} />
+                    <Route path="CourseBoard/Candels" element={<CandlestickBasics />} />
+                    <Route path="CourseBoard/Interest" element={<Interest />} />
+                    <Route path="CourseBoard/CreditScore" element={<CreditScoreArticle />} />
 
                     {/* Catch-all for 404 */}
                     <Route path="*" element={<NotFound />} />
