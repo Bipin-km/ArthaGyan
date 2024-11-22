@@ -155,7 +155,7 @@
 .ag-courses_box {
   margin-right: 31%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
   gap: 20px;
   padding: 20px;
 }
@@ -168,6 +168,7 @@
 
 .ag-courses-item_link {
   display: block;
+  margin-left:25%;
   padding: 30px 20px;
   background-color: white;
   overflow: hidden;
@@ -227,7 +228,8 @@
 .ag-courses_item:nth-child(5n) .ag-courses-item_bg { background-color: #cd3e94; }
 .ag-courses_item:nth-child(6n) .ag-courses-item_bg { background-color: #4c49ea; }
 
-.terobau{
+.divideintwo{
   width:100%;
-  margin-left:10%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
