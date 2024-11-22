@@ -1,32 +1,51 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Register from "./Register";
+import axios from "axios";
 
 import "./Login.css";
 
 function Login() {
   const [formData, setFormData] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
-  const submissionHandler = (event) => {
-    event.preventDefault();
-    console.log(formData.dob);
-
-    if (formData.password.length == 0) {
+  const submissionHandler = async (event) => {
+    event.preventDefault(); // Prevent page reload on form submission
+  
+    // Validation
+    if (!formData.password) {
       alert("Password cannot be empty");
       return;
     }
-
-    if (formData.username.length < 5 || formData.username.length > 64) {
-      alert("Username length : 5-64 characters");
+    if (formData.password.length < 8) {
+      alert("Password must be at least 8 characters long.");
       return;
     }
-
-    const form = document.getElementById("form");
-    form.submit();
+    if (formData.email.length < 5 || formData.email.length > 64) {
+      alert("Username must be between 5 and 64 characters.");
+      return;
+    }
+  
+    try {
+      // Axios POST request
+      const response = await axios.post("http://localhost:5000/login", formData, {
+        headers: { "Content-Type": "application/json" },
+      });
+  
+      // Handle success response
+      console.log(response);
+      alert(`Welcome, ${response.data.name}!`);
+    } catch (err) {
+      // Handle error response
+      console.error("Login Error:", err.response?.data || err.message);
+      alert(
+        err.response?.data?.error || "An error occurred during login. Please try again."
+      );
+    }
   };
+  
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -52,9 +71,9 @@ function Login() {
           <label className="input-label">Username: </label>
           <input
             type="text"
-            name="username"
+            name="email"
             className="input-box"
-            value={formData.username}
+            value={formData.email}
             onChange={handleInputChange}
           />
           </span>
