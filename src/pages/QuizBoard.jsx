@@ -38,7 +38,8 @@ useEffect(() => {
 
   return (
     <div className="quiz-board">
-      <h1>Quiz Topics</h1>
+     <h1 style={{color: "black", fontSize: "1.5rem",fontWeight: "bold",}}> <u>Quiz Topics</u>
+     </h1>
       <div className="quiz-grid">
         {quizData.map((quiz) => (
           <div
