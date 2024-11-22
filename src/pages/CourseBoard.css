@@ -21,6 +21,7 @@
   font-size: 1.25rem;
   text-decoration: underline;
   margin-bottom: 20px;
+  
 }
 
 .course-board .course-list {
@@ -31,7 +32,7 @@
 
 .course-board .course-item {
   background: linear-gradient(to right, #a8e5ff, #e0f7ff);
-  padding: 15px;
+  padding: 35px;
   border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
@@ -40,11 +41,13 @@
 
 .course-board .course-item h3 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  text-align:left;
 }
 
 .course-board .course-item p {
   margin: 5px 0 0;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  text-align:left;
 }
