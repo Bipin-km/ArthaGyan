@@ -102,78 +102,68 @@ function Dashboard() {
 
       <section className="dashboard-section">
         <h2>New Quizzes</h2>
-        <div className="quiz-list">    
-          <div className="quiz-card">
+        <div class="ag-format-container">
+            <div class="ag-courses_box">
+              <div class="ag-courses_item">
+                <a href="#" class="ag-courses-item_link">
+                  <div class="ag-courses-item_bg"></div>
 
-            <div class="quizcard-container">
-              <div class="ag-format-container">
-                <div class="ag-courses_box">
-                  <div class="ag-courses_item">
-                    <a href="#" class="ag-courses-item_link">
-                      <div class="ag-courses-item_bg"></div>
-
-                      <div class="ag-courses-item_title">
-                        UI/Web&amp;Graph design for teenagers 11-17&#160;years
-                        old
-                      </div>
-
-                      <div class="ag-courses-item_date-box">
-                        Start:
-                        <span class="ag-courses-item_date">04.11.2022</span>
-                      </div>
-                    </a>
+                  <div class="ag-courses-item_title">
+                    UI/Web&amp;Graph design for teenagers 11-17&#160;years old
                   </div>
 
-                  <div class="ag-courses_item">
-                    <a href="#" class="ag-courses-item_link">
-                      <div class="ag-courses-item_bg"></div>
+                  <div class="ag-courses-item_date-box">
+                    Start:
+                    <span class="ag-courses-item_date">04.11.2022</span>
+                  </div>
+                </a>
+              </div>
 
-                      <div class="ag-courses-item_title">
-                        UX/UI Web-Design&#160;+ Mobile Design
-                      </div>
+              <div class="ag-courses_item">
+                <a href="#" class="ag-courses-item_link">
+                  <div class="ag-courses-item_bg"></div>
 
-                      <div class="ag-courses-item_date-box">
-                        Start:
-                        <span class="ag-courses-item_date">04.11.2022</span>
-                      </div>
-                    </a>
+                  <div class="ag-courses-item_title">
+                    UX/UI Web-Design&#160;+ Mobile Design
                   </div>
 
-                  <div class="ag-courses_item">
-                    <a href="#" class="ag-courses-item_link">
-                      <div class="ag-courses-item_bg"></div>
+                  <div class="ag-courses-item_date-box">
+                    Start:
+                    <span class="ag-courses-item_date">04.11.2022</span>
+                  </div>
+                </a>
+              </div>
 
-                      <div class="ag-courses-item_title">
-                        Annual package "Product+UX/UI+Graph designer&#160;2022"
-                      </div>
+              <div class="ag-courses_item">
+                <a href="#" class="ag-courses-item_link">
+                  <div class="ag-courses-item_bg"></div>
 
-                      <div class="ag-courses-item_date-box">
-                        Start:
-                        <span class="ag-courses-item_date">04.11.2022</span>
-                      </div>
-                    </a>
+                  <div class="ag-courses-item_title">
+                    Annual package "Product+UX/UI+Graph designer&#160;2022"
                   </div>
 
-                  <div class="ag-courses_item">
-                    <a href="#" class="ag-courses-item_link">
-                      <div class="ag-courses-item_bg"></div>
-
-                      <div class="ag-courses-item_title">Graphic Design</div>
-
-                      <div class="ag-courses-item_date-box">
-                        Start:
-                        <span class="ag-courses-item_date">04.11.2022</span>
-                      </div>
-                    </a>
+                  <div class="ag-courses-item_date-box">
+                    Start:
+                    <span class="ag-courses-item_date">04.11.2022</span>
                   </div>
+                </a>
+              </div>
 
-                </div>
+              <div class="ag-courses_item">
+                <a href="#" class="ag-courses-item_link">
+                  <div class="ag-courses-item_bg"></div>
+
+                  <div class="ag-courses-item_title">Graphic Design</div>
+
+                  <div class="ag-courses-item_date-box">
+                    Start:
+                    <span class="ag-courses-item_date">04.11.2022</span>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
-          </div>
-          <button className="show-more">Show More</button>
-
+        <button className="show-more"><Link to = '/quizboard' style={{textDecoration:'none'}}>Show More</Link></button>
       </section>
     </div>
   );
