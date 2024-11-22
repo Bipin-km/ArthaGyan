@@ -5,6 +5,7 @@ const CreditScoreArticle = () => {
   return (
     <div className="credit-score-article">
       <h1>The Role of Credit Scores in Banking and Loans</h1>
+      <img src="/creditscore.png" alt="Creditscore" className="responsive-image" loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
       <p>
         A credit score is a numerical representation of a person’s
         creditworthiness. Banks and financial institutions use it to evaluate
@@ -37,7 +38,7 @@ const CreditScoreArticle = () => {
           <strong>Loan Amounts and Terms:</strong> Good scores qualify borrowers for higher amounts and better terms.
         </li>
       </ul>
-
+      <img src="/creditscore-vantagescore.jpg" alt="creditscore-vantagescore" className="responsive-image" loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
       <h2>How to Build and Maintain a Good Credit Score</h2>
       <ul>
         <li>

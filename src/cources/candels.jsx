@@ -5,7 +5,7 @@ const CandlestickBasics = () => {
   return (
     <div className="candlestick-container">
       <h1>Understanding Candlestick Charts and Patterns</h1>
-
+      <img src="/candelstick-anatomy.jpg" alt="Anatomy of a candelstick" className="responsive-image" loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
       <section>
         <h2>What Are Candlestick Charts?</h2>
         <p>
@@ -67,7 +67,7 @@ const CandlestickBasics = () => {
           </li>
         </ul>
       </section>
-
+      <img src="/candelstick-patterns.png" alt="Anatomy of a candelstick" className="responsive-image" loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
       <section>
         <h2>Trends in Candlestick Charts</h2>
         <p>Candlestick charts reveal three primary trends:</p>
