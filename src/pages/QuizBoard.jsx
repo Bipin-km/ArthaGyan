@@ -1,38 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./QuizBoard.css";
+import { quizData } from "../quizes/questions";
 
 function QuizBoard() {
+  const navigate = useNavigate();
+
+  const handleQuizSelect = (id) => {
+    navigate(`/QuizBoard/quiz${id}`);
+  };
+
   return (
     <div className="quiz-board">
-      <section className="list-section">
-        <h2>Quizes</h2>
-        <div className="course-list">
-          <div className="course-item">
-            <h3>Title 1</h3>
-            <p>Medium Description</p>
+      <h1>Quiz Topics</h1>
+      <div className="quiz-grid">
+        {quizData.map((quiz) => (
+          <div
+            key={quiz.id}
+            className="course-item"
+            onClick={() => handleQuizSelect(quiz.id)}
+          >
+            <h2 className="title">{quiz.topic}</h2>
+            <p>Quiz {quiz.id + 1}</p>
           </div>
-          <div className="course-item">
-            <h3>Title 1</h3>
-            <p>Medium Description</p>
-          </div>
-          <div className="course-item">
-            <h3>Title 1</h3>
-            <p>Medium Description</p>
-          </div>
-          <div className="course-item">
-            <h3>Title 1</h3>
-            <p>Medium Description</p>
-          </div>
-          <div className="course-item">
-            <h3>Title 1</h3>
-            <p>Medium Description</p>
-          </div>
-          <div className="course-item">
-            <h3>Title 1</h3>
-            <p>Medium Description</p>
-          </div>
-        </div>
-      </section>
+        ))}
+      </div>
     </div>
   );
 }

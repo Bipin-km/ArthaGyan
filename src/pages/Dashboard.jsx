@@ -10,16 +10,15 @@ function Dashboard() {
         <div className="current-course">
           <h3 style={{ justifySelf: "flex-start" }}>Current Course Name</h3>
           <div className="App">
-    
-      <ProgressBar />
-    </div>
+            <ProgressBar />
+          </div>
         </div>
       </section>
 
       <section className="dashboard-section">
         <h2>Quizzes</h2>
         <div className="current-quiz">
-        <ProgressBar />
+          <ProgressBar />
         </div>
       </section>
 
@@ -27,66 +26,78 @@ function Dashboard() {
         <h2>New Courses</h2>
         <div className="course-list">
           <div className="course-card">
-            
-              <div class="card-header"><img src="banker.png"/></div>
-              <div class="card-body">
-                <h5 class="card-title"><Link to="/Banking" style={styles.link}>Understanding Banking: A Fundamental Pillar of Modern Economies</Link></h5>
-                <p class="card-text">
-                A discussion abouts the fundamentals of banking
-                </p>
-              </div>
-              <div class="card-footer">
-                <button class="button">Read More</button>
-              </div>
-   
-          </div>
-
-          <div className="course-card">
-           
-              <div class="card-header"><img src="bank.png"/></div>
-              <div class="card-body">
-                <h5 class="card-title"><Link to="/TypesOfBank" style={styles.link}>Banking in Nepal</Link></h5>
-                <p class="card-text">
-                 A discussion abouts the varios types of banking in Nepal
-                </p>
-              </div>
-              <div class="card-footer">
-                <button class="button">Read More</button>
-              </div>
-
-          </div>
-
-          <div className="course-card">
-           
-              <div class="card-header"><img src="money.png"/></div>
-              <div class="card-body">
-                <h5 class="card-title"> <Link to="/centralbanks" style={styles.link}>Central Banks and Their Importance to the Economy</Link></h5>
-                <p class="card-text">
-                  Discussion og the central banks and their importance to the economy
-                </p>
-              </div>
-              <div class="card-footer">
-                <button class="button">Read More</button>
-              </div>
-     
-          </div>
-
-          <div className="course-card">
-           
-              <div class="card-header"><img src="cheque.png"/></div>
-              <div class="card-body">
-                <h5 class="card-title"><Link to="/cheques" style={styles.link}>Understanding Cheques and Their Types</Link></h5>
-                <p class="card-text">
-                  Discussion about the various types of cheques used by banks in nepal
-                </p>
-              </div>
-              <div class="card-footer">
-                <button class="button">Read More</button>
-              </div>
+            <div class="card-header">
+              <img src="banker.png" />
             </div>
+            <div class="card-body">
+              <h5 class="card-title">
+                <Link to="courseboard/banking" style={styles.link}>
+                  Understanding Banking: A Fundamental Pillar of Modern
+                  Economies
+                </Link>
+              </h5>
+              <p class="card-text">
+                A discussion abouts the fundamentals of banking
+              </p>
+            </div>
+          </div>
 
+          <div className="course-card">
+            <div class="card-header">
+              <img src="bank.png" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">
+                <Link to="/courseboard/typesofbank" style={styles.link}>
+                  Banking in Nepal
+                </Link>
+              </h5>
+              <p class="card-text">
+                A discussion about the various types of banking in Nepal
+              </p>
+            </div>
+          </div>
+
+          <div className="course-card">
+            <div class="card-header">
+              <img src="money.png" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">
+                {" "}
+                <Link to="/courseboard/centralbanks" style={styles.link}>
+                  Central Banks and Their Importance to the Economy
+                </Link>
+              </h5>
+              <p class="card-text">
+                Discussion og the central banks and their importance to the
+                economy
+              </p>
+            </div>
+          </div>
+
+          <div className="course-card">
+            <div class="card-header">
+              <img src="cheque.png" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">
+                <Link to="courseboard/cheques" style={styles.link}>
+                  Understanding Cheques and Their Types
+                </Link>
+              </h5>
+              <p class="card-text">
+                Discussion about the various types of cheques used by banks in
+                nepal
+              </p>
+            </div>
+          </div>
         </div>
-        <button className="show-more">Show More</button>
+        <button className="show-more">
+          <Link to="/courseboard" style={{ textDecoration: "none" }}>
+            Show more
+          </Link>
+        </button>
       </section>
 
       <section className="dashboard-section">
@@ -95,7 +106,6 @@ function Dashboard() {
           <div className="quiz-card">
             <div class="quizcard-container">
               <div class="quizcard">
-
                 <div class="quizcard-image"></div>
                 <div class="quizcard-content">
                   <div>
@@ -111,14 +121,12 @@ function Dashboard() {
                   </a>
                 </div>
               </div>
-              
             </div>
           </div>
-         
+
           <div className="quiz-card">
             <div class="quizcard-container">
               <div class="quizcard">
-
                 <div class="quizcard-image"></div>
                 <div class="quizcard-content">
                   <div>
@@ -133,16 +141,16 @@ function Dashboard() {
                     Learn More
                   </a>
                 </div>
-             
-              
+              </div>
             </div>
           </div>
-          </div>
-      
+
           <div className="quiz-card">
             <div class="quizcard-container">
               <div class="quizcard">
-                <div class="quizcard-image">Please Complete the course before viewing the quiz</div>
+                <div class="quizcard-image">
+                  Please Complete the course before viewing the quiz
+                </div>
                 <div class="quizcard-content">
                   <div>
                     <h2 class="quizcard-title">Discover Nature</h2>
@@ -155,11 +163,11 @@ function Dashboard() {
                   <a href="#" class="quizcard-button">
                     Learn More
                   </a>
-                </div>      
+                </div>
+              </div>
             </div>
           </div>
-          </div>
-        
+
           <div className="quiz-card">
             <div class="quizcard-container">
               <div class="quizcard">
@@ -175,22 +183,22 @@ function Dashboard() {
                   </div>
                   <a href="#" class="quizcard-button">
                     Learn More
-                  </a>     
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          </div>
-          </div>
         </div>
-        <button className="show-more">Show More</button>
+        <button className="show-more"><Link to="/quizboard" style={{textDecoration:'none'}}>Show more</Link></button>
       </section>
     </div>
   );
 }
 const styles = {
   link: {
-      color: "black",
-      textDecoration: "none",
-      fontSize: "1rem",
+    color: "black",
+    textDecoration: "none",
+    fontSize: "1rem",
   },
 };
 

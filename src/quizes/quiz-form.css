@@ -21,7 +21,7 @@
     margin-bottom: 10px;
   }
   
-  button {
+  .quiz-container button {
     background-color: #3498db;
     color: white;
     border: none;
