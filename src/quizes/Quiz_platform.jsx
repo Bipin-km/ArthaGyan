@@ -1,84 +1,79 @@
 import React, { useState, useEffect } from "react";
-import "./QuizPlatform.css";
+import { useParams, useNavigate } from "react-router-dom";
 import { quizData } from "./questions";
+import "./Quiz_platform.css";
 
-function QuizPlatform({ quizId, onBack }) {
-  const [questions, setQuestions] = useState([]);
-  const [userAnswers, setUserAnswers] = useState({});
-  const [submitted, setSubmitted] = useState(false);
+function QuizPlatform() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [currentQuiz, setCurrentQuiz] = useState(null);
+  const [userAnswers, setUserAnswers] = useState([]);
+  const [showResults, setShowResults] = useState(false);
   const [score, setScore] = useState(0);
 
   useEffect(() => {
-    fetch("/questions.json")
-      .then((response) => response.json())
-      .then((data) => {
-        const quizQuestions = data.find((quiz) => quiz.id === quizId)?.questions || [];
-        setQuestions(quizQuestions);
-      });
-  }, [quizId]);
+    // Convert `id` from the route to an integer and find the corresponding quiz
+    const quizId = parseInt(id.replace("quiz", ""), 10); // Ensure proper parsing
+    const quiz = quizData.find((q) => q.id === quizId);
+    if (quiz) {
+      setCurrentQuiz(quiz);
+      setUserAnswers(new Array(quiz.questions.length).fill(null)); // Initialize answers array
+    }
+  }, [id]);
 
-  const handleAnswerChange = (questionIndex, optionIndex) => {
-    setUserAnswers((prev) => ({ ...prev, [questionIndex]: optionIndex }));
+  const handleAnswerSelect = (questionIndex, optionIndex) => {
+    if (showResults) return;
+
+    const updatedAnswers = [...userAnswers];
+    updatedAnswers[questionIndex] = optionIndex;
+    setUserAnswers(updatedAnswers);
   };
 
   const handleSubmit = () => {
-    let newScore = 0;
-    questions.forEach((question, index) => {
-      if (userAnswers[index] === question.answer) {
-        newScore++;
-      }
-    });
-    setScore(newScore);
-    setSubmitted(true);
+    if (!currentQuiz) return;
+
+    const calculatedScore = userAnswers.reduce((acc, answer, index) => {
+      return acc + (answer === currentQuiz.questions[index].answer ? 1 : 0);
+    }, 0);
+
+    setScore(calculatedScore);
+    setShowResults(true);
   };
+
+  if (!currentQuiz) return <div>Loading quiz...</div>;
 
   return (
     <div className="quiz-platform">
-      <h2>Quiz {quizId + 1}</h2>
-      {submitted ? (
-        <div className="result-container">
-          <h3>Your Score: {score}/{questions.length}</h3>
-          <div className="correct-answers">
-            <h4>Correct Answers:</h4>
-            {questions.map((question, index) => (
-              <div key={index} className="question-result">
-                <p>{index + 1}. {question.question}</p>
-                <p>Correct Answer: {question.options[question.answer]}</p>
-                <p>
-                  Your Answer:{" "}
-                  {userAnswers[index] !== undefined
-                    ? question.options[userAnswers[index]]
-                    : "Not Answered"}
-                </p>
-              </div>
-            ))}
-          </div>
-          <button onClick={onBack} className="back-button">Back to Quizzes</button>
-        </div>
-      ) : (
-        <div className="quiz-container">
-          {questions.map((question, index) => (
+      <h1>{currentQuiz.topic}</h1>
+      {!showResults ? (
+        <div className="questions-container">
+          {currentQuiz.questions.map((question, index) => (
             <div key={index} className="question-card">
-              <p>
-                {index + 1}. {question.question}
-              </p>
+              <h3>{question.question}</h3>
               <div className="options">
                 {question.options.map((option, optionIndex) => (
-                  <label key={optionIndex} className="option">
-                    <input
-                      type="radio"
-                      name={`question-${index}`}
-                      checked={userAnswers[index] === optionIndex}
-                      onChange={() => handleAnswerChange(index, optionIndex)}
-                    />
+                  <button
+                    key={optionIndex}
+                    className={`option ${
+                      userAnswers[index] === optionIndex ? "selected" : ""
+                    }`}
+                    onClick={() => handleAnswerSelect(index, optionIndex)}
+                  >
                     {option}
-                  </label>
+                  </button>
                 ))}
               </div>
             </div>
           ))}
-          <button onClick={handleSubmit} className="submit-button">
+          <button className="submit-btn" onClick={handleSubmit}>
             Submit Quiz
+          </button>
+        </div>
+      ) : (
+        <div className="results-container">
+          <h2>Your Score: {score} / {currentQuiz.questions.length}</h2>
+          <button className="back-btn" onClick={() => navigate("/QuizBoard")}>
+            Back to Quiz Board
           </button>
         </div>
       )}
