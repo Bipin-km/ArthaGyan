@@ -5,15 +5,7 @@ import { Link } from "react-router-dom";
 function Dashboard() {
   return (
     <div className="dashboard">
-      <section className="dashboard-section">
-        <h2>Courses</h2>
-        <div className="current-course">
-          <h3 style={{ justifySelf: "flex-start" }}>Current Course Name</h3>
-          <div className="App">
-            <ProgressBar />
-          </div>
-        </div>
-      </section>
+    
 
       <section className="dashboard-section">
         <h2>Quizzes</h2>
