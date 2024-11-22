@@ -6,7 +6,7 @@ function CourseBoard() {
   return (
     <div className="course-board">
       <section className="list-section">
-        <h2>Courses</h2>
+        <h2 style={{color: "black", fontSize: "1.5rem",fontWeight: "bold",}}>Courses</h2>
         <div className="course-list">
           <Link to='/courseboard/banking' className="course-item" style={{ textDecoration: 'none' }}>
             <h3>Understanding Banking</h3>

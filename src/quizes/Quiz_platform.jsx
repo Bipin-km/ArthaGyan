@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./Quiz_platform.css";
-import { quizData } from "./questions";
 
 const QuizPlatform = () => {
     const { id } = useParams();
@@ -10,49 +10,126 @@ const QuizPlatform = () => {
     const [score, setScore] = useState(0);
     const [quiz, setQuiz] = useState(null);
 
-    useEffect(() => {
-        const selectedQuiz = quizData.find((quiz) => quiz.id === parseInt(id));
-        if (selectedQuiz) {
-            setQuiz(selectedQuiz);
-        } else {
-            navigate("/not-found");
-        }
-    }, [id, navigate]);
+  useEffect(() => {
+    const quizId = parseInt(id.replace("quiz", ""), 10); // Ensure proper parsing
+    fetchQuizQuestions(quizId);
+  }, [id]);
 
-    const handleAnswerOptionClick = (isCorrect) => {
-        if (isCorrect) {
-            setScore(score + 1);
-        }
+  const fetchQuizQuestions = async (quizId) => {
+    try {
+      const response = await axios.get(`http://127.0.0.1:5000/getQuizQuestions/${quizId}`);
+      if (response.status === 200) {
+        console.log("Quiz questions fetched successfully:", response.data);
 
-        const nextQuestion = currentQuestion + 1;
-        if (nextQuestion < quiz.questions.length) {
-            setCurrentQuestion(nextQuestion);
-        } else {
-            navigate("/results", { state: { score: score, total: quiz.questions.length } });
-        }
-    };
+        // Transform the data into the structure required by the component
+        const quiz = {
+          topic: `Quiz ${quizId + 1}`, // Assign a topic name dynamically
+          questions: response.data.map((item) => {
+            const options = [
+              item.options.option_a,
+              item.options.option_b,
+              item.options.option_c,
+              item.options.option_d,
+            ];
+            const correctAnswerIndex = 0; // Assuming option_a is always correct
+            const shuffledData = shuffleWithCorrectAnswer(options, correctAnswerIndex);
+            console.log("Shuffled Options:", shuffledData.shuffledOptions);
+            return {
+              question_id: item.question_id,
+              question: item.question,
+              options: shuffledData.shuffledOptions,
+              correctAnswerIndex: shuffledData.correctAnswerIndex, // Use the correct index here
+            };
+          }),
+        };
 
-    if (!quiz) {
-        return <div>Loading...</div>;
+        setCurrentQuiz(quiz);
+        setUserAnswers(new Array(quiz.questions.length).fill(null)); // Initialize answers array
+      }
+    } catch (error) {
+      console.error("Error fetching quiz questions:", error.message);
+    }
+  };
+
+  // Utility function to shuffle options and track the correct answer index
+  const shuffleWithCorrectAnswer = (options, correctAnswerIndex) => {
+    const indexedOptions = options.map((option, index) => ({
+      option,
+      originalIndex: index,
+    }));
+
+    for (let i = indexedOptions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indexedOptions[i], indexedOptions[j]] = [indexedOptions[j], indexedOptions[i]];
     }
 
-    return (
-        <div className="quiz-platform">
-            <h2>{quiz.title}</h2>
-            <div className="question-section">
-                <div className="question-count">
-                    <span>Question {currentQuestion + 1}</span>/{quiz.questions.length}
-                </div>
-                <div className="question-text">{quiz.questions[currentQuestion].questionText}</div>
-            </div>
-            <div className="answer-section">
-                {quiz.questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                    <button key={index} onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>
-                        {answerOption.answerText}
-                    </button>
-                ))}
-            </div>
-        </div>
+    const shuffledOptions = indexedOptions.map((item) => item.option);
+    const newCorrectAnswerIndex = indexedOptions.findIndex(
+      (item) => item.originalIndex === correctAnswerIndex
     );
+
+    return { shuffledOptions, correctAnswerIndex: newCorrectAnswerIndex };
+  };
+
+  const handleAnswerSelect = (questionIndex, optionIndex) => {
+    if (showResults) return;
+
+    const updatedAnswers = [...userAnswers];
+    updatedAnswers[questionIndex] = optionIndex;
+    setUserAnswers(updatedAnswers);
+  };
+
+  const handleSubmit = () => {
+    if (!currentQuiz) return;
+
+    const calculatedScore = userAnswers.reduce((acc, answer, index) => {
+      return acc + (answer === currentQuiz.questions[index].correctAnswerIndex ? 1 : 0);
+    }, 0);
+
+    setScore(calculatedScore);
+    setShowResults(true);
+  };
+
+  if (!currentQuiz) return <div>Loading quiz...</div>;
+
+  return (
+    <div className="quiz-platform">
+      <h1>{currentQuiz.topic}</h1>
+      {!showResults ? (
+        <div className="questions-container">
+          {currentQuiz.questions.map((question, index) => (
+            <div key={index} className="question-card">
+              <h3>{question.question}</h3>
+              <div className="options">
+                {question.options.map((option, optionIndex) => (
+                  <button
+                    key={optionIndex}
+                    className={`option ${
+                      userAnswers[index] === optionIndex ? "selected" : ""
+                    }`}
+                    onClick={() => handleAnswerSelect(index, optionIndex)}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ))}
+          <button className="submit-btn" onClick={handleSubmit}>
+            Submit Quiz
+          </button>
+        </div>
+      ) : (
+        <div className="results-container">
+          <h2>
+            Your Score: {score} / {currentQuiz.questions.length}
+          </h2>
+          <button className="back-btn" onClick={() => navigate("/QuizBoard")}>
+            Back to Quiz Board
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }
 export default QuizPlatform;
