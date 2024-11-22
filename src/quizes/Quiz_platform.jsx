@@ -3,15 +3,17 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Quiz_platform.css";
 
-const QuizPlatform = () => {
-    const { id } = useParams();
-    const navigate = useNavigate();
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [score, setScore] = useState(0);
-    const [quiz, setQuiz] = useState(null);
-
+function QuizPlatform() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [currentQuiz, setCurrentQuiz] = useState(null);
+  const [userAnswers, setUserAnswers] = useState([]);
+  const [showResults, setShowResults] = useState(false);
+  const [score, setScore] = useState(0);
+  const [quizId,setQuizId] = useState(id);
   useEffect(() => {
-    const quizId = parseInt(id.replace("quiz", ""), 10); // Ensure proper parsing
+    setQuizId(parseInt(id.replace("quiz", ""), 10));
+    // const quizId = parseInt(id.replace("quiz", ""), 10); // Ensure proper parsing
     fetchQuizQuestions(quizId);
   }, [id]);
 
@@ -79,6 +81,33 @@ const QuizPlatform = () => {
     updatedAnswers[questionIndex] = optionIndex;
     setUserAnswers(updatedAnswers);
   };
+  const addUserScore = async () => {
+    const user_id = localStorage.getItem("id");
+    const data = {
+        score_date: new Date().toISOString().slice(0, 10),
+        fk1_user_id: user_id,
+        fk2_quizzes_id: quizId,
+    };
+    try {
+      const baseUrl="http://192.168.137.1:5000";
+
+        const response = await axios.post(`${baseUrl}/addUserScore`, data);
+        if (response.status === 201) {
+            console.log("Score added successfully:", response.data);
+            alert("Score added successfully")
+        } else {
+            console.error("Unexpected response:", response);
+        }
+    } catch (error) {
+        if (error.response) {
+            console.error("Error response:", error.response.data);
+        } else if (error.request) {
+            console.error("No response received:", error.request);
+        } else {
+            console.error("Error:", error.message);
+        }
+    }
+};
 
   const handleSubmit = () => {
     if (!currentQuiz) return;
@@ -87,6 +116,9 @@ const QuizPlatform = () => {
       return acc + (answer === currentQuiz.questions[index].correctAnswerIndex ? 1 : 0);
     }, 0);
 
+    addUserScore();
+
+    console.log("asdfadsfadsf")
     setScore(calculatedScore);
     setShowResults(true);
   };
@@ -133,4 +165,5 @@ const QuizPlatform = () => {
     </div>
   );
 }
+
 export default QuizPlatform;

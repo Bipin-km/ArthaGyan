@@ -13,7 +13,7 @@ var username = "New User"
     <div className="header-container">
       {/* Header */}
       <header className="main-header">
-        <Link to='/' className="logo"><img src="./ag.png" alt="pandey is gey" style={{width:'10%'}}/></Link>
+        <Link to='/' className="logo"><img src="/ag.png" alt="pandey is gey" style={{width:'10%'}}/></Link>
         
         <div className="user-section">
         <Link to="/profile" className="username" style={{ textDecoration: 'none' }}>
