@@ -26,7 +26,7 @@ function QuizPlatform() {
 
         // Transform the data into the structure required by the component
         const quiz = {
-          topic: `Quiz ${quizId + 1}`, // Assign a topic name dynamically
+          topic: `Quiz ${parseInt(quizId) + 1}`, // Assign a topic name dynamically
           questions: response.data.map((item) => {
             const options = [
               item.options.option_a,
