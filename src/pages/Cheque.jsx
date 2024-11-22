@@ -22,16 +22,30 @@ function Cheque() {
     }));
   };
 
-  const validateInput = () => {
-    if (!chequeData.payee || !chequeData.amount || !chequeData.amountInWords) {
-      setErrorMessage("Please fill out all fields.");
+  const validateInputs = () => {
+    const { payee, amount, amountInWords, date } = chequeData;
+    if (!payee) {
+      setErrorMessage("Payee name is required.");
+      return false;
+    }
+    if (!amount || isNaN(amount) || parseFloat(amount) <= 0) {
+      setErrorMessage("Valid amount is required.");
+      return false;
+    }
+    if (!amountInWords) {
+      setErrorMessage("Amount in words is required.");
+      return false;
+    }
+    if (!date) {
+      setErrorMessage("Date is required.");
       return false;
     }
     return true;
   };
 
-  const handleSubmit = () => {
-    if (!validateInput()) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!validateInputs()) {
       alert("Please fill out all fields.");
       return;
     }

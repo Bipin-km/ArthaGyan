@@ -23,7 +23,7 @@ const BankingInfo = () => {
         enabling online transfers, and operating ATMs. These services improve efficiency in the financial system and promote trust in 
         monetary transactions.
       </p>
-
+        <img src="/bank_a.jpg" alt="bisham is gey" style={{height:'50vh',display:'block',justifySelf:'center'}} />
       <h2>Types of Banks</h2>
       <ul>
         <li>
