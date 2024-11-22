@@ -96,7 +96,7 @@ function Register() {
       });
   
       // Handle success response
-      navigator("/")
+      navigator("/login")
       
     } catch (err) {
       // Handle error response
