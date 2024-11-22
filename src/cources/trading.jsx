@@ -1,12 +1,9 @@
 import React from "react";
-import "./banking.css";
+
 const StockTradingBasics = () => {
   return (
     <div className="banking-info-container">
       <h1 className="title">Stock Trading: A Beginner's Guide</h1>
-    <div className="stock-trading-container">
-      <h1>Stock Trading: A Beginner's Guide</h1>
-      <img src="/trading.jpg" alt="bishem_gay" style={{height:"50vh", display:"block", justifySelf:"center"}} />
       <section>
         <h2>What is Stock Trading?</h2>
         <p className="intro">
