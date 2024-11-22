@@ -2,6 +2,7 @@ import React from "react";
 import "./banking.css";
 
 const BankingInfo = () => {
+  const selectedTopicId = 0;
   return (
     <div className="banking-info-container">
       <h1 className="title">Understanding Banking: A Fundamental Pillar of Modern Economies</h1>
