@@ -23,6 +23,7 @@ import StockTradingBasics from "./cources/trading";
 import CandlestickBasics from "./cources/candels";
 import Interest from "./cources/intrest";
 import CreditScoreArticle from "./cources/creditscore";
+import QuizPlatform from "./quizes/Quiz_platform";
 const Main = () => {
     return (
         <Router>
@@ -48,6 +49,7 @@ const Main = () => {
                     <Route path="Profile" element={<Profile />} />
 
                     <Route path="QuizBoard" element={<QuizBoard />} />
+                    <Route path="QuizBoard/quiz:id" element={<QuizPlatform />} />
                     <Route path="CourseBoard" element={<CourseBoard />} />
 
                     <Route path="Cheque" element={<ChequeForm />} />
