@@ -105,59 +105,57 @@ function Dashboard() {
         <div class="ag-format-container">
             <div class="ag-courses_box">
               <div class="ag-courses_item">
-                <a href="#" class="ag-courses-item_link">
+                <a href="/quizboard/quiz/0" class="ag-courses-item_link">
                   <div class="ag-courses-item_bg"></div>
 
                   <div class="ag-courses-item_title">
-                    UI/Web&amp;Graph design for teenagers 11-17&#160;years old
+                    Understanding Banking
                   </div>
 
                   <div class="ag-courses-item_date-box">
-                    Start:
-                    <span class="ag-courses-item_date">04.11.2022</span>
+                  Take Quiz to test your knowledge
                   </div>
                 </a>
               </div>
 
               <div class="ag-courses_item">
-                <a href="#" class="ag-courses-item_link">
+                <a href="/quizboard/quiz/1" class="ag-courses-item_link">
                   <div class="ag-courses-item_bg"></div>
 
                   <div class="ag-courses-item_title">
-                    UX/UI Web-Design&#160;+ Mobile Design
+                    Banking in Nepal
                   </div>
 
                   <div class="ag-courses-item_date-box">
-                    Start:
-                    <span class="ag-courses-item_date">04.11.2022</span>
+                  Take Quiz to test your knowledge
                   </div>
                 </a>
               </div>
 
               <div class="ag-courses_item">
-                <a href="#" class="ag-courses-item_link">
+                <a href="/quizboard/quiz/2" class="ag-courses-item_link">
                   <div class="ag-courses-item_bg"></div>
 
                   <div class="ag-courses-item_title">
-                    Annual package "Product+UX/UI+Graph designer&#160;2022"
+                    Central Banks and Their Importance to the Economy
                   </div>
 
                   <div class="ag-courses-item_date-box">
-                    Start:
-                    <span class="ag-courses-item_date">04.11.2022</span>
+                  Take Quiz to test your knowledge
                   </div>
                 </a>
               </div>
 
               <div class="ag-courses_item">
-                <a href="#" class="ag-courses-item_link">
+                <a href="/quizboard/quiz/3" class="ag-courses-item_link">
                   <div class="ag-courses-item_bg"></div>
 
-                  <div class="ag-courses-item_title">Graphic Design</div>
+                  <div class="ag-courses-item_title">
+                    Understanding Cheques and Their Types
+                  </div>
 
                   <div class="ag-courses-item_date-box">
-                    Start:
-                    <span class="ag-courses-item_date">04.11.2022</span>
+                  Take Quiz to test your knowledge
                   </div>
                 </a>
               </div>
