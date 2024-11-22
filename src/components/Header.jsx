@@ -49,16 +49,16 @@ const Header = ({ username = "John Doe" }) => {
         <nav className="sidebar-nav">
           <ul>
             <li>
-              <a href="#courses">
+              
                 <BookOpen size={20} />
                 <Link to= '/courseboard'  style={{ textDecoration: 'none' }}>Courses</Link>
-              </a>
+           
             </li>
             <li>
-              <a href="#quizzes">
+             
                 <Brain size={20} />
                 <Link to='/quizboard'  style={{ textDecoration: 'none' }}>Quizzes</Link>
-              </a>
+             
             </li>
             <li>
               <a href="#settings"  style={{ textDecoration: 'none' }}>
