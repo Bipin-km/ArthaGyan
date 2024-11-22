@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ChequeInfo = () => {
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
       <h1>Understanding Cheques and Their Types</h1>
       <p>
-        A cheque is a widely used financial instrument that facilitates
-        non-cash transactions by instructing a bank to pay a specific amount
-        from the account of the drawer to the payee. Cheques are convenient,
-        secure, and legal forms of transferring money, commonly used for
-        personal, business, and governmental purposes.
+        A cheque is a widely used financial instrument that facilitates non-cash
+        transactions by instructing a bank to pay a specific amount from the
+        account of the drawer to the payee. Cheques are convenient, secure, and
+        legal forms of transferring money, commonly used for personal, business,
+        and governmental purposes.
       </p>
       <h2>Key Features of a Cheque:</h2>
       <ul>
@@ -21,6 +22,11 @@ const ChequeInfo = () => {
         <li>Signature: Authenticates the cheque.</li>
       </ul>
       <h2>Types of Cheques</h2>
+      <img
+        src="/cheque_a.jpg"
+        alt="bishem_gey"
+        style={{ height: "50vh", display: "block", justifySelf: "center" }}
+      />
       <ol>
         <li>
           <strong>Bearer Cheque:</strong> A cheque that can be encashed by the
@@ -32,14 +38,15 @@ const ChequeInfo = () => {
           </ul>
         </li>
         <li>
-          <strong>Order Cheque:</strong> A cheque issued to a specific person
-          or entity, requiring endorsement and identity verification before
+          <strong>Order Cheque:</strong> A cheque issued to a specific person or
+          entity, requiring endorsement and identity verification before
           encashment.
           <ul>
             <li>The word "Bearer" is crossed out.</li>
             <li>Safer than bearer cheques.</li>
-            <li>Use Case: Suitable for personal transactions requiring
-            security.</li>
+            <li>
+              Use Case: Suitable for personal transactions requiring security.
+            </li>
           </ul>
         </li>
         <li>
@@ -65,10 +72,29 @@ const ChequeInfo = () => {
           making it valid only on or after that date.
           <ul>
             <li>Useful for deferred payments.</li>
-            <li>Risks: Cannot be encashed immediately, so timing is crucial.</li>
+            <li>
+              Risks: Cannot be encashed immediately, so timing is crucial.
+            </li>
           </ul>
         </li>
       </ol>
+
+      <button
+        style={{
+          fontSize: "larger",
+          fontWeight: "bolder",
+          textDecoration: "none",
+          width: "50%",
+          color: "white",
+          backgroundColor: "blue",
+          padding: "5px",
+        }}
+      >
+        <Link to="/cheque" style={{ textDecoration: "none", color: "white" }}>
+          {" "}
+          Lets go for a check filling simulation
+        </Link>
+      </button>
     </div>
   );
 };

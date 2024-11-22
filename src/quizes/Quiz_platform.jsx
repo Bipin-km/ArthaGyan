@@ -3,13 +3,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Quiz_platform.css";
 
-function QuizPlatform() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [currentQuiz, setCurrentQuiz] = useState(null);
-  const [userAnswers, setUserAnswers] = useState([]);
-  const [showResults, setShowResults] = useState(false);
-  const [score, setScore] = useState(0);
+const QuizPlatform = () => {
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [score, setScore] = useState(0);
+    const [quiz, setQuiz] = useState(null);
 
   useEffect(() => {
     const quizId = parseInt(id.replace("quiz", ""), 10); // Ensure proper parsing
@@ -134,5 +133,4 @@ function QuizPlatform() {
     </div>
   );
 }
-
 export default QuizPlatform;

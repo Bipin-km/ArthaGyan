@@ -18,6 +18,7 @@ const BankLoans = () => {
         </p>
       </section>
 
+      <img src="/loan.jpg" alt="bisham_gey" style={{height:"50vh", display:"block", justifySelf:"center"}} />
       <section>
         <h2>Types of Bank Loans</h2>
         <p>Here are the most common types of loans provided by banks:</p>

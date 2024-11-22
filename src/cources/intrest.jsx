@@ -15,7 +15,7 @@ const Interest = () => {
           investments.
         </p>
       </section>
-
+        <img src="/interest.jpg" alt="bisham_gey" style={{height:'50vh', display:'block', justifySelf:"center"}} />
       <section>
         <h2>Simple Interest</h2>
         <p>
