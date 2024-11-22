@@ -24,6 +24,7 @@ import CandlestickBasics from "./cources/candels";
 import Interest from "./cources/intrest";
 import CreditScoreArticle from "./cources/creditscore";
 import QuizPlatform from "./quizes/Quiz_platform";
+import Logout from "../logout";
 const Main = () => {
   return (
     <Router>
@@ -43,6 +44,7 @@ const Main = () => {
 
           {/* Login Page */}
           <Route path="Login" element={<Login />} />
+          <Route path="Logout" element={<Logout />} />
 
           {/* Profile Page */}
           <Route path="Profile" element={<Profile />} />
