@@ -1,10 +1,10 @@
 import React from "react";
-
+import "./banking.css";
 const ChequeInfo = () => {
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h1>Understanding Cheques and Their Types</h1>
-      <p>
+    <div className="banking-info-container">
+      <h1 className="title">Understanding Cheques and Their Types</h1>
+      <p className="intro">
         A cheque is a widely used financial instrument that facilitates
         non-cash transactions by instructing a bank to pay a specific amount
         from the account of the drawer to the payee. Cheques are convenient,
@@ -13,12 +13,12 @@ const ChequeInfo = () => {
       </p>
       <h2>Key Features of a Cheque:</h2>
       <ul>
-        <li>Drawer: The person who writes the cheque.</li>
-        <li>Drawee: The bank that processes the cheque.</li>
-        <li>Payee: The individual or entity receiving the payment.</li>
-        <li>Amount: Clearly specified in words and numbers.</li>
-        <li>Date: Indicates when the cheque is valid for processing.</li>
-        <li>Signature: Authenticates the cheque.</li>
+        <li><strong>Drawer:</strong> The person who writes the cheque.</li>
+        <li><strong>Drawee:</strong> The bank that processes the cheque.</li>
+        <li><strong>Payee:</strong> The individual or entity receiving the payment.</li>
+        <li><strong>Amount:</strong> Clearly specified in words and numbers.</li>
+        <li><strong>Date:</strong> Indicates when the cheque is valid for processing.</li>
+        <li><strong>Signature:</strong> Authenticates the cheque.</li>
       </ul>
       <h2>Types of Cheques</h2>
       <ol>
@@ -38,8 +38,10 @@ const ChequeInfo = () => {
           <ul>
             <li>The word "Bearer" is crossed out.</li>
             <li>Safer than bearer cheques.</li>
-            <li>Use Case: Suitable for personal transactions requiring
-            security.</li>
+            <li>
+              Use Case: Suitable for personal transactions requiring
+              security.
+            </li>
           </ul>
         </li>
         <li>
@@ -65,7 +67,9 @@ const ChequeInfo = () => {
           making it valid only on or after that date.
           <ul>
             <li>Useful for deferred payments.</li>
-            <li>Risks: Cannot be encashed immediately, so timing is crucial.</li>
+            <li>
+              Risks: Cannot be encashed immediately, so timing is crucial.
+            </li>
           </ul>
         </li>
       </ol>

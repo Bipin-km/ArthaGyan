@@ -1,14 +1,19 @@
 import React from "react";
-import "./stockbasicinfo.css";
-
+import "./banking.css";
 const StockBasics = () => {
   return (
-    <div className="stock-basics-container">
-      <h1>Understanding the Basics of Stocks and Stock Trading</h1>
+    <div className="banking-info-container">
+      <h1 className="title">Understanding the Basics of Stocks and Stock Trading</h1>
       <section>
         <h2>What are Stocks?</h2>
-        <img src="/stock-cake.jpg" alt="stock-cake" className="responsive-image" loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
-        <p>
+        <img
+          src="/stock-cake.jpg"
+          alt="stock-cake"
+          className="responsive-image"
+          loading="lazy"
+          style={{ height: "50vh", display: "block", justifySelf: "center" }}
+        />
+        <p className="intro">
           Stocks represent ownership in a company. When you purchase a stock,
           you own a share of the company’s assets and earnings. Stocks are
           typically categorized into two main types:
@@ -27,7 +32,7 @@ const StockBasics = () => {
 
       <section>
         <h2>What is a Stock Market?</h2>
-        <p>
+        <p className="intro">
           The stock market is a platform where buyers and sellers trade shares
           of publicly listed companies. It's divided into two main categories:
         </p>
@@ -41,15 +46,21 @@ const StockBasics = () => {
             stocks among themselves.
           </li>
         </ul>
-        <p>
+        <p className="intro">
           Examples of major stock markets include the New York Stock Exchange
           (NYSE) and Nasdaq.
         </p>
       </section>
-      <img src="/stock-bonds.jpg" alt="stock-bonds" className="responsive-image" loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
+      <img
+        src="/stock-bonds.jpg"
+        alt="stock-bonds"
+        className="responsive-image"
+        loading="lazy"
+        style={{ height: "50vh", display: "block", justifySelf: "center" }}
+      />
       <section>
         <h2>How Does Stock Trading Work?</h2>
-        <p>
+        <p className="intro">
           Stock trading involves buying and selling shares to capitalize on
           price movements. Trading can be done through:
         </p>
@@ -71,7 +82,7 @@ const StockBasics = () => {
 
       <section>
         <h2>Why Invest in Stocks?</h2>
-        <p>
+        <p className="intro">
           Stocks offer the potential for higher returns compared to traditional
           savings options. Investors gain through:
         </p>
@@ -89,7 +100,7 @@ const StockBasics = () => {
 
       <section>
         <h2>Risks of Stock Trading</h2>
-        <p>
+        <p className="intro">
           Stock trading carries risks, including market volatility, economic
           downturns, and company-specific challenges. Diversification and
           research can help mitigate these risks.
@@ -100,4 +111,3 @@ const StockBasics = () => {
 };
 
 export default StockBasics;
-
