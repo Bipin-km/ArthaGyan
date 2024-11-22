@@ -233,3 +233,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
+.ag-courses_box{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 80%;
+}

@@ -26,7 +26,7 @@ function CourseBoard() {
           </Link>
           <Link to='/courseboard/interest' className="course-item" style={{textDecoration:'none'}}>
             <h3>Understanding Interest: Simple and Compound</h3>
-            <>Learn about simple and compound interest! They are the basics of finance</>
+            <p>Learn about simple and compound interest! They are the basics of finance</p>
           </Link>
           <Link to='/courseboard/loans' className="course-item" style={{textDecoration:'none'}}>
             <h3>Understanding Bank Loans</h3>

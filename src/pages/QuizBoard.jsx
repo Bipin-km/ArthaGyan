@@ -7,7 +7,7 @@ function QuizBoard() {
   const navigate = useNavigate();
 
   const handleQuizSelect = (id) => {
-    navigate(`/QuizBoard/quiz${id}`);
+    navigate(`/quizboard/${id}`);
   };
 
   return (
