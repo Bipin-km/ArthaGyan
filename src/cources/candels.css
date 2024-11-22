@@ -7,6 +7,13 @@
     margin: 20px auto;
     font-family: 'Arial', sans-serif;
   }
+
+  .responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block; 
+    object-fit: cover; 
+  }
   
   h1 {
     text-align: center;

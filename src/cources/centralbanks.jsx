@@ -4,6 +4,7 @@ const CentralBanksInfo = () => {
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
       <h1>Central Banks and Their Importance to the Economy</h1>
+      <img src="/candelstick-anatomy.jpg" alt="Anatomy of a candelstick" className="responsive-image" loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
       <p>
         Central banks are the cornerstone of any nation's financial system,
         responsible for maintaining economic stability and fostering growth. As

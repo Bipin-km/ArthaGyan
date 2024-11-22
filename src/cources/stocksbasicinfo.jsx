@@ -7,6 +7,7 @@ const StockBasics = () => {
       <h1>Understanding the Basics of Stocks and Stock Trading</h1>
       <section>
         <h2>What are Stocks?</h2>
+        <img src="/stock-cake.jpg" alt="stock-cake" className="responsive-image" loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
         <p>
           Stocks represent ownership in a company. When you purchase a stock,
           you own a share of the company’s assets and earnings. Stocks are
@@ -45,7 +46,7 @@ const StockBasics = () => {
           (NYSE) and Nasdaq.
         </p>
       </section>
-
+      <img src="/stock-bonds.jpg" alt="stock-bonds" className="responsive-image" loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
       <section>
         <h2>How Does Stock Trading Work?</h2>
         <p>

@@ -5,6 +5,13 @@
     color: #333;
   }
   
+  .responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block; 
+    object-fit: cover; 
+  }
+
   .banking-info h1 {
     font-size: 2em;
     color: #2c3e50;

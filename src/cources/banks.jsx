@@ -4,6 +4,7 @@ const BankingInNepal = () => {
   return (
     <div className="banking-info">
       <h1>Banking in Nepal</h1>
+      <img src="/banks-in-nepal-2.jpg" alt="Banks in Nepal" className="responsive-image"loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
       <p>
         Nepal's banking sector is categorized into several types, each serving
         different financial needs and regulatory purposes. The classification is
@@ -42,7 +43,7 @@ const BankingInNepal = () => {
         These banks operate regionally and nationally, providing specialized credit
         services.
       </p>
-
+      <img src="/banks-in-nepal-1.jpg" alt="Banks in Nepal" className="responsive-image"loading="lazy"  style={{height:"50vh",display:'block',justifySelf:"center" }}/>
       <h2>3. Finance Companies (Class C)</h2>
       <p>
         Finance companies are smaller financial institutions that offer services like
