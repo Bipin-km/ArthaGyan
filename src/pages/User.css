@@ -47,11 +47,12 @@
   height: 400px;
   display: flex;
   box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
+  margin-top:3%;
 }
 
 .wrapper .left{
   width: 35%;
-  background: linear-gradient(to right,#ac0101,#df0101);
+  background: linear-gradient(to right,#07578d,#209CEE);
   padding: 30px 25px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -159,7 +160,7 @@
     height: 490px;
     display: flex;
     flex-direction: column;
-
+    margin-top: 5%;
   }
   .name_label{
     font-size: 18px;
