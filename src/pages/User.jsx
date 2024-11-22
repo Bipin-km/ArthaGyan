@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./user.css";
-
+import axios from "axios";
 const Profile = () => {
   // Fake user data
   const fakeUser = {
@@ -11,6 +11,12 @@ const Profile = () => {
     phone_no: "1234567890",
     avatar: "/ag.png",
   };
+
+  
+  var userId = localStorage.getItem("id");
+  if (userId==null){
+    userId =1;
+  }
 
   // States to handle updates
   const [user, setUser] = useState(fakeUser);
@@ -39,6 +45,23 @@ const Profile = () => {
     setUser((prev) => ({ ...prev, phone_no }));
     alert("Phone number updated successfully!");
   };
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const baseUrl = "http://192.168.137.1:5000"
+      try {
+        const response = await axios.get(baseUrl+`/getUserData/${userId}`);
+        setUser(response.data);
+        console.log(response.data)
+      } catch (err) {
+        setError(err.response ? err.response.data.error : "An error occurred");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUserData();
+  }, [userId]);
+
 
   return (
     <div>
