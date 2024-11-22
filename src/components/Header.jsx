@@ -9,10 +9,12 @@ const Header = ({ username = "John Doe" }) => {
     <div className="header-container">
       {/* Header */}
       <header className="main-header">
-        <div className="logo">arthagyan</div>
+        <Link to='/' className="logo"><img src="./ag.png" alt="pandey is gey" style={{width:'10%'}}/></Link>
         
         <div className="user-section">
-          <span className="username">{username}</span>
+        <Link to="/profile" className="username" style={{ textDecoration: 'none' }}>
+  {username}
+</Link>
           <button 
             onClick={() => setIsSidebarOpen(true)}
             className="menu-button"
@@ -49,17 +51,17 @@ const Header = ({ username = "John Doe" }) => {
             <li>
               <a href="#courses">
                 <BookOpen size={20} />
-                <span>Courses</span>
+                <Link to= '/courseboard'  style={{ textDecoration: 'none' }}>Courses</Link>
               </a>
             </li>
             <li>
               <a href="#quizzes">
                 <Brain size={20} />
-                <span>Quizzes</span>
+                <Link to='/quizboard'  style={{ textDecoration: 'none' }}>Quizzes</Link>
               </a>
             </li>
             <li>
-              <a href="#settings">
+              <a href="#settings"  style={{ textDecoration: 'none' }}>
                 <Settings size={20} />
                 <span>Account Settings</span>
               </a>
