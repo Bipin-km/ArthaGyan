@@ -9,7 +9,7 @@ function QuizBoard() {
 
     const fetchAllQuizzes = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:5000/getAllQuizzes');
+            const response = await axios.get('http://192.168.137.1:5000/getAllQuizzes');
             if (response.status === 200) {
                 console.log("Quizzes fetched successfully:", response.data);
                 setQuizData(response.data)
